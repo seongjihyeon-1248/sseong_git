@@ -1,1 +1,1 @@
-print("It is just test.")
+print("test")
