@@ -2,7 +2,7 @@
 ===============
 
 ## Visual Stdio Code 이용 규칙
-1. 자바     Ctrl + F5
+1. 자바     F5
 2. 파이썬   Terminal
 3. C        Run
 4. md       
