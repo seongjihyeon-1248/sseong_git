@@ -3,9 +3,7 @@
 
 ## Visual Stdio Code 이용 규칙
 1. 자바     F5
-2. 파이썬   Terminal
-3. C        Run
-4. md       
+2. C        Run    
 
 ## 링크
 * Administrator, 레지스트리 - https://injunech.tistory.com/308
