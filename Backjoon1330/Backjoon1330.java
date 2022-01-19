@@ -1,5 +1,5 @@
-package bj1330;
-public class bj1330{
+package Backjoon1330;
+public class Backjoon1330{
     public static void main(String args[]){
         int A, B;
         A = 1;
