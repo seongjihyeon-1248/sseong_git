@@ -1,6 +1,6 @@
 package Backjoon9498;
 
-public class Backjoon {
+public class Backjoon9498 {
     public static void main(String args[]){
         int a;
         a = 100;
