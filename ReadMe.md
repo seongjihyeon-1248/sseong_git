@@ -1,17 +1,22 @@
-*CODING && COMPUTER* 
+*CODING && COMPUTER*
 ===============
 
 ## Visual Stdio Code 이용 규칙
-1. 자바     F5
-2. C        Run    
+
+1. java     F5
+2. c
+3. python
+4. md
 
 ## 링크
+
 * Administrator, 레지스트리 - https://injunech.tistory.com/308
 * VS 코드에서 깃 연동 - https://jalbin.tistory.com/20
 * md 기본 중의 기본 사용법 - https://gist.github.com/ihoneymon/652be052a0727ad59601
 * 코딩 주제 추천 - https://rladuddms.tistory.com/99
 
 ## 코딩 테스트 주제
+
 * most
     * DFS, BFS
     * 투 포인터
