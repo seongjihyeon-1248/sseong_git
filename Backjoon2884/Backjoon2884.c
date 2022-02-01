@@ -4,12 +4,10 @@ int main(){
     int H, M;
     H = 10;
     M = 10;
-    if(M > 45) M -= 45;
+    if(M > 44)          printf("%d %d", H, M - 45);
     else {
-        M += 15;
-        if(H == 0) H = 23;
-        else H--;
+        if(H == 0)      printf("23 %d", M + 15);
+        else            printf("%d %d", H--, M + 15);
     }
-    printf("%d %d", H, M);
     return 0;
 }

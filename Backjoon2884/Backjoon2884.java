@@ -5,12 +5,10 @@ public class Backjoon2884 {
         int H, M;
         H = 10;
         M = 10;
-        if(M > 45) M -= 45;
+        if(M > 44)      System.out.print(H + " " + (M - 45));
         else {
-            M += 15;
-            if(H == 0) H = 23;
-            else H--;
+            if(H == 0)  System.out.print("23 " + (M + 15));
+            else        System.out.print((H - 1) + " " + (M + 15));
         }
-        System.out.print(H + " " +M);
     }
 }
