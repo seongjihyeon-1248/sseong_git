@@ -1,12 +1,10 @@
 H = 10
 M = 10
-if M > 45: M -= 45
+if M > 44:          print(H, M - 45)
 else: 
-        M += 15
-        if H == 0:  H = 23
-        else:       H -= 1  # 파이썬에는 증감 연산자가 X
-print(H,M) 
-
+        if H == 0:  print(23, M + 15)
+        else:       print(H - 1, M + 15)    # 파이썬에는 증감 연산자가 X
+        
 '''
 
  *파이썬의 출력
