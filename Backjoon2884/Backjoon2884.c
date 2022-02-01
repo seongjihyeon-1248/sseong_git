@@ -2,8 +2,8 @@
 
 int main(){
     int H, M;
-    H = 23;
-    M = 40;
+    H = 10;
+    M = 10;
     if(M > 45) M -= 45;
     else {
         M += 15;
