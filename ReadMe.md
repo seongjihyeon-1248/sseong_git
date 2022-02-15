@@ -12,7 +12,7 @@
 
 * Administrator, 레지스트리 - https://injunech.tistory.com/308
 * VS 코드에서 깃 연동 - https://jalbin.tistory.com/20
-* md 기본 중의 기본 사용법 - https://gist.github.com/ihoneymon/652be052a0727ad59601
+* md 기본 사용법 - https://gist.github.com/ihoneymon/652be052a0727ad59601
 * 코딩 주제 추천 - https://rladuddms.tistory.com/99
 
 ## 코딩 테스트 주제
@@ -37,3 +37,14 @@
     * 미트 마스킹
     * 위상 정렬
     * 세그먼트 트리
+
+## Backjoon 문제 유형 정리
+* if 문
+    * 1330
+    * 9498
+    * 2753
+    * 14681
+    * 2884
+* for 문
+    * 2739
+    * 10950
