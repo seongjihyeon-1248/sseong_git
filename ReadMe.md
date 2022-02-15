@@ -14,6 +14,7 @@
 * VS 코드에서 깃 연동 - https://jalbin.tistory.com/20
 * md 기본 사용법 - https://gist.github.com/ihoneymon/652be052a0727ad59601
 * 코딩 주제 추천 - https://rladuddms.tistory.com/99
+* python 설명 - https://wikidocs.net/4307
 
 ## 코딩 테스트 주제
 
