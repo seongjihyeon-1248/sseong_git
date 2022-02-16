@@ -1,6 +1,16 @@
 *CODING && COMPUTER*
 ===============
 
+## code && git
+
+* git push
+    git add -A
+    git commit -m "커밋 이름"
+    git push
+
+* git pull
+    git pull
+
 ## Visual Stdio Code 이용 규칙
 
 1. java     F5
@@ -40,6 +50,7 @@
     * 세그먼트 트리
 
 ## Backjoon 문제 유형 정리
+
 * if 문
     * 1330
     * 9498
