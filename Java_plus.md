@@ -16,3 +16,7 @@
 ### 자바의 배열
     자료형[] 변수이름 = new 자료형[배열의 크기]; (초기화 필요)
     자료형[] 변수이름 = {};
+
+### 입출력을 빠르게 하는 방법
+    Scanner -> BufferedReader
+    System.out.println -> BufferedWriter

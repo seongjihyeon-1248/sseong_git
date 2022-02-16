@@ -55,10 +55,13 @@
         ex) list.extend([1,2,3])
         ex) list.extend(list_2)
 
-### 파이선의 if문
+### 파이썬의 if문
     if 조건:
     elif 조건:
     else:
 
 ### 파이썬의 for문
     for 변수 in 리스트:
+
+### 입출력을 빠르게 하는 방법
+    input -> sys.stdin.readline (맨 끝의 개행 문자까지 읽어버리니 .rstrip()을 추가해주는 것이 좋다.)

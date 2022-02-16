@@ -1,10 +1,10 @@
-package Backjoon10950;
+package Backjoon15552;
 
-public class Backjoon10950 {
+public class Backjoon15552 {
     public static void main(String ags[]){
         int T;
-        int[] A = {1, 2, 3, 9, 5};
-        int[] B = {1, 3, 4, 8, 2};
+        int[] A = {1, 12, 5, 40, 1000};
+        int[] B = {1, 34, 500, 60, 1000};
         T = 5;
         for(int i = 0; i < T; i++)
             System.out.println(A[i]+B[i]);
