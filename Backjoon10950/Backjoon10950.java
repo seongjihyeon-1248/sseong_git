@@ -10,9 +10,3 @@ public class Backjoon10950 {
             System.out.println(A[i]+B[i]);
     }
 }
-
-/*
-    *자바의 배열
-    자료형[] 변수이름 = new 자료형[배열의 크기]; && 초기화
-    자료형[] 변수이름 = {};
-*/
