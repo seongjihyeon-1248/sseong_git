@@ -9,7 +9,7 @@
     의 구조가 일반적
 
 ### 자바의 출력
-    System.out.print(출력할 내용); -> 줄 개행 x
+    Syㅋㅋstem.out.print(출력할 내용); -> 줄 개행 x
     System.out.println(출력할 내용); -> 줄 개행 O
     출력할 내용은 +를 이용하여 입력
 
