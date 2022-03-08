@@ -54,6 +54,10 @@
         리스트이름 += 리스트   와도 기능이 같음
         ex) list.extend([1,2,3])
         ex) list.extend(list_2)
+    max(list)
+        리스트의 최댓값
+    min(list)
+        리스트의 최솟값
 
 ### 파이썬의 if문
     if 조건:
