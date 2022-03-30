@@ -1,9 +1,9 @@
 # 자바
 ------------------------
 ### 자바의 구성
-    package 패키지 이름;
-    public class 클래스 이름{
-        public static void main(String args[]){
+    package 패키지 이름; -> package 안에 들어있으면 클래스 모두 이용 가능
+    public class 클래스 이름{ 
+        public static void main(String args[]){ -> 실행되는 main
         }                                   
     }
     의 구조가 일반적
@@ -16,6 +16,7 @@
 ### 자바의 배열
     자료형[] 변수이름 = new 자료형[배열의 크기]; (초기화 필요)
     자료형[] 변수이름 = {};
+
     arrayList -> 동적배열이라고 생각하면 편하고 파이썬의 리스트와 거의 동일
     ArrayList<타입> n = new ArrayList<타입>();
     ArrayList<타입> n = new ArrayList<타입>(인덱스 수 지정);
