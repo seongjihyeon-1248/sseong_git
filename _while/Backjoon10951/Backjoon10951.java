@@ -1,4 +1,4 @@
-package Backjoon10951;
+package _while.Backjoon10951;
 
 public class Backjoon10951 {
     public static void main(String args[]){
