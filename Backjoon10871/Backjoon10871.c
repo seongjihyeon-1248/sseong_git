@@ -9,11 +9,14 @@ int main(){
     int* A;
     A = (int*)malloc(sizeof(int));
 
-    for(int i = 0; i < N; i++)
-        A[i] = a[i];
+    int i = 0;
+    while(i < N)
+        A[i] = a[i++];
 
-    for(int i = 0; i < N; i++)
-        if(A[i] < X) printf("%d ", A[i]);
+    i = 0;
+    while(i < N)
+        if(A[i] < X) 
+            printf("%d ", A[i++]);
 
     return 0;
 }

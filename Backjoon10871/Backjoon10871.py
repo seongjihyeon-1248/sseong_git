@@ -3,8 +3,12 @@ N = 10
 X = 5
 A = list()
 
-for i in range(0, N):
-        A.insert(i, a[i])
+i = 0
+while(i < N):
+    A.insert(i, a[i])
+    i += 1
 
-for i in range(0, N):
+i = 0
+while(i < N):
     if A[i] < X: print(A[i], end=' ')
+    i += 1

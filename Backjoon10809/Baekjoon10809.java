@@ -1,5 +1,5 @@
-package Backjoon1080__;
-public class Baekjoon1080{
+package Backjoon10809;
+public class Baekjoon10809{
     public static void main(String args[]){
         char[] alpa = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm' ,'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
         int[] num = new int[26];
