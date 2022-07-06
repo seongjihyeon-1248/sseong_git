@@ -36,6 +36,13 @@
     System.out.println(list.contains(검색할 값)) -> 없으면 false, 있다면 true 반환
     System.out.println(list.indexOf(검색할 값)) -> 없으면 -1, 있다면 인덱스 값 반환
 
+### 자바의 문자열
+    String 변수이름 = " "
+    a.length()
+        문자열 길이
+    문자열 변수이름.charAt(인덱스)
+        해당 인덱스의 문자
+
 ### 입출력을 빠르게 하는 방법
     Scanner -> BufferedReader
     System.out.println -> BufferedWriter
