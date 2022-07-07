@@ -20,71 +20,76 @@
 
 ## 링크
 
-* Administrator, 레지스트리 - https://injunech.tistory.com/308
-* VS 코드에서 깃 연동 - https://jalbin.tistory.com/20
-* md 기본 사용법 - https://gist.github.com/ihoneymon/652be052a0727ad59601
-* 코딩 주제 추천 - https://rladuddms.tistory.com/99
-* python 설명 - https://wikidocs.net/4307
+* Administrator, 레지스트리 - <https://injunech.tistory.com/308>
+* VS 코드에서 깃 연동 - <https://jalbin.tistory.com/20>
+* md 기본 사용법 - <https://gist.github.com/ihoneymon/652be052a0727ad59601>
+* 코딩 주제 추천 - <https://rladuddms.tistory.com/99>
+* python 설명 - <https://wikidocs.net/4307>
 
 ## 코딩 테스트 주제
 
 * most
-    * DFS, BFS
-    * 투 포인터
-    * 최단거리
-    * 문자열
-    * 이분탐색
+    DFS, BFS
+    투 포인터
+    최단거리
+    문자열
+    이분탐색
 * more
-    * 브루트포스
-    * 다이나믹 프로그래밍
-    * 시뮬레이션
+    브루트포스
+    다이나믹 프로그래밍
+    시뮬레이션
 * basic
-    * 순열조합 활용
-    * 진법
-    * Union Find
+    순열조합 활용
+    진법
+    Union Find
 * etc
-    * Trie
-    * Flood fill
-    * 미트 마스킹
-    * 위상 정렬
-    * 세그먼트 트리
+    Trie
+    Flood fill
+    미트 마스킹
+    위상 정렬
+    세그먼트 트리
 
 ## Backjoon 문제 유형 정리
 
 * if 문
-    * 1330  두 수 비교하기
-    * 9498  시험 성적
-    * 2753  윤년
-    * 2884  알람 시계
+    1330  두 수 비교하기
+    9498  시험 성적
+    2753  윤년
+    2884  알람 시계
 * 반복문
-    * for 문
-        * 2739  구구단
-        * 2741  N찍기
-        * 2438  별 찍기 - 1
-        * 2439  별 찍기 - 2
-    * while 문
-        * 15552 빠른 A+B
-        * 10871 X보다 작은 수
-        * 10951 A+B - 4
-        * 1110  더하기 사이클
+    for 문
+        2739  구구단
+        2741  N찍기
+        2438  별 찍기 - 1
+        2439  별 찍기 - 2
+    while 문
+    15552 빠른 A+B
+    10871 X보다 작은 수
+    10951 A+B - 4
+    1110  더하기 사이클
 * 1차원 배열
-    * 10818 최소, 최대
-    * 2562  최댓값
-    * 1546  평균
-    * 4344  평균은 넘겠지
+    10818 최소, 최대
+    2562  최댓값
+    1546  평균
+    4344  평균은 넘겠지
 * 함수
-    * 4673  셀프 넘버
-    * 1065  한수
-*  문자열
-    * 11720 숫자의 합
-    * 10809 알파벳 찾기
-    * 1157  단어 공부
-    * 1152  단어의 개수
-
+    4673  셀프 넘버
+    1065  한수
+* 문자열
+    11720 숫자의 합
+    10809 알파벳 찾기
+    1157  단어 공부
+    1152  단어의 개수
+* 기본 수학 1
+    1712  손익분기점
+    2869  달팽이는 올라가고 싶다
+    10250
+    2839
+  
 # c언어
 
-- 동적 배열
-int* n = (int*)malloc(sizeof(int) * N);
-- 문자열 길이
+* 동적 배열
+int*n = (int*)malloc(sizeof(int) * N);
+* 문자열 길이
 strlen(문자열)
     #include <string.h> 필요
