@@ -13,7 +13,7 @@
 
 ## Visual Stdio Code 이용 규칙
 
-1. java     F5
+1. java     F5          디버그 안 될 경우 "public static void main(String args[])"확인
 2. c        Run_code
 3. python
 4. md
