@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h> 
 
-int main(){
-    int n = 100;
-    int num = n + 1;
+void ber(int n){
+    int num = n;
     int*nm = (int*)malloc(sizeof(int) * (num));
-    int sum = 0;
     int count = 0;
     
-    for(int i = 0; i < num; i++)
+    for(int i = 1; i < num; i++)
         nm[i] = i + n;
 
     if(nm[0] == 1) 
@@ -34,5 +33,12 @@ int main(){
         if(nm[i] != 0)
             nm[num++] = nm[i];
 
-    printf("%d", num);
+    printf("%d\n", num);
+}
+
+int main(){
+    int n [100] = {1, 10, 13, 100, 1000, 10000, 100000};
+    int count = 7;
+    for(int i = 0; i < count; i++)
+        ber(n[i]);
 }
