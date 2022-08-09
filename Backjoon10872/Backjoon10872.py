@@ -1,5 +1,7 @@
 N = 10
-f = 1
-for i in range(1, N + 1):
-    f *= i
-print(f)
+def fac(n):
+    if(n == 1):
+        return 1
+    return n * fac(n - 1)
+    
+print(fac(N))

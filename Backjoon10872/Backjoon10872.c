@@ -1,8 +1,12 @@
 #include <Stdio.h>
 
+int fac(int n){
+    if(n == 1)
+        return 1;
+    return n * fac(n - 1);
+}
+
 int main(){
-    int N = 10, f = 1;
-    for(int i = N; i > 0; i--)
-        f *= i;
-    printf("%d", f);
+    int N = 10;
+    printf("%d", fac(N));
 }

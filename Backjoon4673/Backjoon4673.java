@@ -1,13 +1,7 @@
 package Backjoon4673;
 
 public class Backjoon4673 {
-    public static void main(String args[]){
-        new selfnum();
-    }
-}
-
-class selfnum{
-    selfnum(){
+    public static void selfnum(){
         int[] a = new int[10000]; 
         for(int i = 0; i < 10000; i++)
             a[i] = 0;
@@ -33,5 +27,8 @@ class selfnum{
         for(int i = 1; i < 10000; i++)
             if(a[i] == 0) 
                 System.out.println(i); 
+    }
+    public static void main(String args[]){
+        selfnum();
     }
 }
