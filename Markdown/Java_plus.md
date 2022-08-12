@@ -31,7 +31,10 @@
         리스트 모든 값 제거
     list.size()
         리스트 크기
+    list.get(인덱스)
+        해당 인덱스의 값 가져오기
     ex) for(Integer i : list) 
+        ber(i)
         for문을 이용하는 예시
     System.out.println(list.contains(검색할 값)) -> 없으면 false, 있다면 true 반환
     System.out.println(list.indexOf(검색할 값)) -> 없으면 -1, 있다면 인덱스 값 반환
