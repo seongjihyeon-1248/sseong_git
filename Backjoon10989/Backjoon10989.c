@@ -119,9 +119,9 @@ void heapSort(int arr[], int size) {
 
 
 int main(){
-    int N = 5;
+    int N = 10;
     int*n = (int*)malloc(sizeof(int) * N);
-    int mn[5] = {5, 4, 3, 2, 1};
+    int mn[10] = {5, 2, 3, 1, 4, 2, 3, 5, 1, 7};
     for(int i = 0; i < N; i++)
         n[i] = mn[i];
 
