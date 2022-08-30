@@ -10,12 +10,20 @@ int main(){
     int* len = (int*)malloc(sizeof(char*) * N);
     char *tmp[50];
     int temp;
+    int right = 0;
+    int MN = 0;
     for (int i = 0; i < N; i++){
-        strcpy(n[i], mn[i]);
-        len[i] = strlen(mn[i]);
+        for (int ii = 0; ii < MN; ii++)
+            if (strcmp(mn[i], n[ii]) == 0)
+                right = 1;
+        if(right == 0){
+            strcpy(n[MN], mn[i]);
+            len[MN++] = strlen(mn[i]);
+        }
+        right = 0;
     }
-    for (int i = 0; i < N - 1; i++)	{		
-        for (int j = 0; j < N - 1 - i; j++)   {			
+    for (int i = 0; i < MN - 1; i++)	{		
+        for (int j = 0; j < MN - 1 - i; j++)   {			
             if (strcmp(n[j], n[j + 1]) > 0)   {	
                 temp = len[j];
                 len[j] = len[j + 1];
@@ -26,16 +34,19 @@ int main(){
             }		
         }	
     }
-     for (int i = 0; i < N - 1; i++)	{		
-        for (int j = 0; j < N - 1 - i; j++)   {	
-            if (len[j] > len[j + 1])   {				
+     for (int i = 0; i < MN - 1; i++)	{		
+        for (int j = 0; j < MN - 1 - i; j++)   {	
+            if (len[j] > len[j + 1])   {
+                temp = len[j];
+                len[j] = len[j + 1];
+                len[j + 1] = temp;					
                 strcpy(tmp, n[j]);				
                 strcpy(n[j], n[j + 1]);				
                 strcpy(n[j + 1], tmp);			
             }		
         }	
     }
-    for (int i = 0; i < N; i++){
+    for (int i = 0; i < MN; i++){
         printf("%s\n", n[i]);
     }	
 }
