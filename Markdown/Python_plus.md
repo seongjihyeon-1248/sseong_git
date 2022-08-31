@@ -66,6 +66,8 @@
         리스트의 최댓값
     min(list)
         리스트의 최솟값
+    if item in list:
+        리스트에 (item)이 있는 지 확인
 
 ### 파이썬의 if문
     if 조건:

@@ -37,6 +37,7 @@
         ber(i)
         for문을 이용하는 예시
     System.out.println(list.contains(검색할 값)) -> 없으면 false, 있다면 true 반환
+    //문자열 포함 확인
     System.out.println(list.indexOf(검색할 값)) -> 없으면 -1, 있다면 인덱스 값 반환
 
 ### 자바의 문자열
