@@ -74,8 +74,11 @@
     elif 조건:
     else:
 
-### 파이썬의 for문
+### for문
     for 변수 in 리스트:
 
 ### 입출력을 빠르게 하는 방법
     input -> sys.stdin.readline (맨 끝의 개행 문자까지 읽어버리니 .rstrip()을 추가해주는 것이 좋다.)
+
+### 랜덤
+    random.randrange(0, 정수) 0이상 '정수' 미만의 정수 리턴

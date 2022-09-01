@@ -50,3 +50,16 @@
 ### 입출력을 빠르게 하는 방법
     Scanner -> BufferedReader
     System.out.println -> BufferedWriter
+
+### 랜덤
+    random.nextInt(정수)        0 이상, '정수' 미만인 정수 리턴
+    random.nextFloat()          float값
+    random.nextDouble()         double값
+    random.nextBoolean()        boolean값
+
+### 맵
+    (키, 값) 구조
+    import java.util.HashMap;
+    HashMap<자료형1, 자료형2> 맵 = new HashMap<>();
+    for (자료형1 key : 맵.keySet())
+    앱.get(인덱스)

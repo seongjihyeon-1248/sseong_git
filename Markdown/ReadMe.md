@@ -103,14 +103,18 @@
     1181  단어 정렬
 * 집합과 맵
     10815 숫자 카드
-    1620
-    10816
+    1620  나는야 포켓몬 마스터 이다솜
+    10816 
     1764
   
 # c언어
 
 * 동적 배열
-int*n = (int*)malloc(sizeof(int) * N);
+    int*n = (int*)malloc(sizeof(int) * N);
+* 동적 문자열 2차원 배열
+    char **n = (char**)malloc(sizeof(char*) * N);
+    for(int i = 0; i < N; i++)
+        n[i] = (char*)malloc(sizeof(char) * 50);
 * 문자열 길이
-strlen(문자열)
-    #include <string.h> 필요
+    strlen(문자열)
+        #include <string.h> 필요
