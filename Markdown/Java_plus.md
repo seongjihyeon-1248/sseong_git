@@ -39,6 +39,13 @@
     System.out.println(list.contains(검색할 값)) -> 없으면 false, 있다면 true 반환
     //문자열 포함 확인
     System.out.println(list.indexOf(검색할 값)) -> 없으면 -1, 있다면 인덱스 값 반환
+    list.retainAll(리스트)
+        두 리스트의 교집합 구하여 list에 저장
+    list.removeAll(리스트)
+        두 리스트의 차집합 구하여 list에 저장
+    list.addAll(리스트)
+        두 리스트의 합집합 구하여 list에 저장 (중복도 두 번 저장된 주의)
+}
 
 ### 자바의 문자열
     String 변수이름 = " "
