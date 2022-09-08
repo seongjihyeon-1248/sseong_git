@@ -1,6 +1,6 @@
 # 자바
 ------------------------
-### 자바의 구성
+### 구성
     package 패키지 이름; -> package 안에 들어있으면 클래스 모두 이용 가능
     public class 클래스 이름{ 
         public static void main(String args[]){ -> 실행되는 main
@@ -8,14 +8,21 @@
     }
     의 구조가 일반적
 
-### 자바의 출력
+### 출력
     System.out.print(출력할 내용); -> 줄 개행 x
     System.out.println(출력할 내용); -> 줄 개행 O
     출력할 내용은 +를 이용하여 입력
 
-### 자바의 배열
+### 연산자
+    Math.pow(밑, 지수);
+        제곱
+
+### 배열
     자료형[] 변수이름 = new 자료형[배열의 크기]; (초기화 필요)
     자료형[] 변수이름 = {};
+
+    Arrays.sort(배열)
+        배열 정렬
 
     arrayList -> 동적배열이라고 생각하면 편하고 파이썬의 리스트와 거의 동일
     ArrayList<타입> n = new ArrayList<타입>();
@@ -25,6 +32,10 @@
        ArrayList<타입> n = new ArrayList<타입>(Arrays.asList(1,2,3); -> 값 추가하면서 생성
     list.add(index,value), list.add(value), list.add(null)
         값 추가
+    ex)ArrayList<타입[]> list = new ArrayList<타입[]>();
+        이중 배열(배열을 인수로 가지는 ArrayList)
+    list.add(new Integer[]{value_1, value_2..., value_n});
+        이중 배열 값 추가
     list.remove(index)
         index 제거
     list clear()
@@ -45,9 +56,13 @@
         두 리스트의 차집합 구하여 list에 저장
     list.addAll(리스트)
         두 리스트의 합집합 구하여 list에 저장 (중복도 두 번 저장된 주의)
+    Collections.sort(리스트);
+        리스트 정렬
+    Collections.sort(n, Comparator.comparing(String::length));
+        문자열 리스트를 길이를 기준으로 정렬
 }
 
-### 자바의 문자열
+### 문자열
     String 변수이름 = " "
     a.length()
         문자열 길이
