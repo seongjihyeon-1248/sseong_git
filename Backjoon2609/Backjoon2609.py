@@ -3,10 +3,11 @@ B = 18
 
 if(A < B):
     min = A
+    max = B
 else:
     min = B
+    max = A
     
-min_2 = min
 
 while(min > 1):
     min -= 1
@@ -17,7 +18,7 @@ while(min > 1):
 
 i = 1
 while(1):
-    if((min_2 * i) % A == 0 and (min_2 * i) % B == 0):
-        print(min_2 * i)
+    if((max * i) % A == 0 and (max * i) % B == 0):
+        print(max * i)
         break
     i += 1

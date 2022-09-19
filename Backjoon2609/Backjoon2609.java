@@ -4,13 +4,15 @@ public class Backjoon2609{
     public static void main(String args[]){
         int A = 24;
         int B = 18;
-        int min, min_2;
-        if(A < B)
+        int min, max;
+        if(A < B){
             min = A;
-        else
+            max = B;
+        }
+        else{
             min = B;
-        
-        min_2 = min;
+            max = A;
+        }
 
         while(--min > 1)
             if(A % min == 0 && B % min == 0){
@@ -19,8 +21,8 @@ public class Backjoon2609{
             }
 
         for(int i = 1; ; i++){
-            if((min_2 * i) % A == 0 && (min_2 * i) % B == 0){
-                System.out.println(min_2 * i);
+            if((max * i) % A == 0 && (max * i) % B == 0){
+                System.out.println(max * i);
                 break;
             }
         }
