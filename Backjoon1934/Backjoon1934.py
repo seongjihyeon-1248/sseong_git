@@ -1,3 +1,9 @@
+def gcd(num1, num2):
+    if(num2 == 0):
+        return num1
+    else: 
+        return gcd(num2, num1 % num2)
+
 T = 3
 a = [1, 6, 13]
 b = [45000, 10, 17]
@@ -8,15 +14,5 @@ for i in range(0, T):
     A.append(a[i])
     B.append(b[i])
     
-for ii in range(0, T):
-    if(A[ii] < B[ii]):
-        max = B[ii]
-    else:
-        max = A[ii]
-        
-    i = 1
-    while(1):
-        if((max * i) % A[ii] == 0 and (max * i) % B[ii] == 0):
-            print(max * i)
-            break
-        i += 1
+for i in range(0, T):
+    print(format((A[i] * B[i]) / gcd(A[i], B[i]), ".0f"))

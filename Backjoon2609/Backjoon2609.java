@@ -1,30 +1,15 @@
 package Backjoon2609;
 
 public class Backjoon2609{
+    public static int gcd(int num1, int num2){
+        if(num2 == 0) return num1;
+        else return gcd(num2, num1 % num2);
+    }
     public static void main(String args[]){
         int A = 24;
         int B = 18;
-        int min, max;
-        if(A < B){
-            min = A;
-            max = B;
-        }
-        else{
-            min = B;
-            max = A;
-        }
-
-        while(--min > 1)
-            if(A % min == 0 && B % min == 0){
-                System.out.println(min);
-                break;
-            }
-
-        for(int i = 1; ; i++){
-            if((max * i) % A == 0 && (max * i) % B == 0){
-                System.out.println(max * i);
-                break;
-            }
-        }
+        int gcd = gcd(A, B);
+        System.out.println(gcd);
+        System.out.print(A * B / gcd);
     }
 }

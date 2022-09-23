@@ -3,6 +3,10 @@ package Backjoon1934;
 import java.util.ArrayList;
 
 public class Backjoon1934 {
+    public static int gcd(int num1, int num2){
+        if(num2 == 0) return num1;
+        else return gcd(num2, num1 % num2);
+    }
     public static void main(String args[]){
         int T = 3;
         int[] a = {1, 6, 13};
@@ -13,19 +17,7 @@ public class Backjoon1934 {
             A.add(a[i]);
             B.add(b[i]);
         }
-        int max;
-        for(int ii = 0; ii < T; ii++){
-            if(A.get(ii) < B.get(ii))
-                max = B.get(ii);
-            else
-                max = A.get(ii);
-
-            for(int i = 1; ; i++){
-                if((max * i) % A.get(ii) == 0 && (max * i) % B.get(ii) == 0){
-                    System.out.println(max * i);
-                    break;
-                }
-            }
-        }   
+        for(int i = 0; i < T; i++)
+            System.out.println((A.get(i) * B.get(i)) / gcd(A.get(i), B.get(i)));
     }
 }
