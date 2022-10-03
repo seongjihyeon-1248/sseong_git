@@ -11,15 +11,14 @@ int isPromising(int* q, int n) {
     }
     return 1;
 }
-void enumerate(int* q, int n, int N) { 
+void enumerate(int* q, int n, int N) { //q[] -> 해당 인덱스 행에서 놓은 위치, n -> 채워진 행 개수
     if (n == N)       // n이 끝까지 돌았다면 카운트를 증가한다.
         count++;
-    else {
+    else 
         for (int i = 0; i < N; i++) {
-            q[n] = i;
-            if (isPromising(q, n)) enumerate(q, n + 1, N);   
+            q[n] = i; 
+            if (isPromising(q, n) == 1) enumerate(q, n + 1, N);   // 유망하다면 계속 탐색(재귀호출)
         }
-    }
 }
 
 int main(){
