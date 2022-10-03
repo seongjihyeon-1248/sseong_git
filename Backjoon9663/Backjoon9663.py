@@ -1,3 +1,4 @@
+global count
 count = 0
 def isPromising(q, n):
     for i in range(0, n):
@@ -10,12 +11,12 @@ def isPromising(q, n):
     return 1
 
 def enumerate(q, n, N):   # q[] -> 해당 인덱스 행에서 놓은 위치, n -> 채워진 행 개수
+    global count
     if (n == N):       # n이 끝까지 돌았다면 카운트를 증가한다.
         count += 1
     else:
         for i in range(0, N):
             q[n] = i
-            print(q)
             if (isPromising(q, n) == 1):
                 enumerate(q, n + 1, N)   # 유망하다면 계속 탐색(재귀호출)
             
