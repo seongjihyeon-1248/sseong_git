@@ -1,4 +1,5 @@
 # https://school.programmers.co.kr/learn/courses/30/lessons/138475?language=python3
+# 시간 초과 해결 못함...
 
 import math
 
