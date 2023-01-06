@@ -1,9 +1,9 @@
+//https://school.programmers.co.kr/learn/courses/30/lessons/138476
 package _20221227;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
-public class _20221227{
+public class _20220105{
     public static int Solution(int k, int[] tangerine) {
         int answer = 0;
         ArrayList<Integer> tan = new ArrayList<Integer>();
