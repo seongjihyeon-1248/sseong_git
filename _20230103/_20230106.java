@@ -1,3 +1,4 @@
+//시간초과
 package _20230103;
 
 import java.util.*;
