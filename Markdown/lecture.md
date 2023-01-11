@@ -1,4 +1,4 @@
-자바_lecture
+lecture
 ============
 
 # Jetpack
@@ -18,9 +18,11 @@ Jetpack의 라이브러들을 묶은 패키지 명 = AndroidX
 결론 
     * 여러분이 androidx가 아니라 android를 사용하게 됐을 때 문제가 생기는 이유는 이것 때문입니다... 
 
-### room
+## room
 room - 앱 내부에 데이터를 관리하는 기능을 도와주는 라이브러리
-### 준비
+
+### Java
+##### 준비
 build.gradle 모듈
 ```
 dependencies{
@@ -29,8 +31,8 @@ dependencies{
     annotationProcessor 'androidx.room:room-compiler:2.1.0'
 }
 ```
-### 데이터 항목
-예시
+#### 예시
+##### 데이터 항목
 ```java
 @Entity
 public class Todo {
@@ -41,7 +43,7 @@ public class Todo {
     //생성자, 설정자, 접근자...
 }
 ```
-### 데이터 엑세스 (등록, 수정, 조회, 삭제 기능 제공) (인터페이스)
+##### 데이터 엑세스 (등록, 수정, 조회, 삭제 기능 제공) (인터페이스)
 ```java
 @Dao
 public interface TodoDao {
@@ -58,14 +60,14 @@ public interface TodoDao {
     void delete(Todo todo);
 }
 ```
-###  데이터 베이스
+#####  데이터 베이스
 ```java
 @Database(entities = {Todo.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract TodoDao todoDao();
 }
 ```
-###  데이터 사용
+#####  데이터 사용
 ```java
 AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, "todo-db")
                 .allowMainThreadQueries()
@@ -73,4 +75,61 @@ AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, "todo-db")
 
 db.todoDao().getAll().toString()
 db.todoDao().insert(new Todo((mTodoEditText).getText().toString()));
+```
+
+### kotlin
+##### 준비
+plugins {
+    ...
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
+}
+```
+dependencies{
+    implementation 'androidx.core:core-ktx:1.3.2'
+    ...
+    implementation 'androidx.room:room-runtime:2.1.0'
+    kapt 'androidx.room:room-compiler:2.1.0'
+}
+```
+#### 예시
+##### 데이터 항목
+```kotlin
+@Entity
+data class Todo(var title: String) {  //생성자에 title
+    @PrimaryKey(autoGenerate = true) var id: Int = 0 //기본키, 자동 생성 : var id: Int = 0
+}
+```
+##### 데이터 엑세스 (등록, 수정, 조회, 삭제 기능 제공) (인터페이스)
+```kotlin
+@Dao
+interface TodoDao {
+    @Query("SELECT * FROM Todo")
+    fun getAll(): List<Todo>
+
+    @Insert
+    fun insert(todo: Todo)
+
+    @Update
+    fun update(todo: Todo)
+
+    @Delete
+    fun delete(todo: Todo)
+}
+```
+#####  데이터 베이스
+```kotlin
+@Database(entities = [Todo::class], version = 1)
+abstract class AppDatabase : RoomDatabase() {
+    abstract fun todoDao(): TodoDao
+}
+```
+#####  데이터 사용
+```kotlin
+val db: AppDatabase = Room.databaseBuilder(this, AppDatabase::class.java, "todo-db")
+            .allowMainThreadQueries()
+            .build()
+
+db.todoDao().getAll().toString()
+db.todoDao().insert(Todo(todo_edit.text.toString()))
 ```
