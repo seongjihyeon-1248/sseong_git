@@ -136,7 +136,7 @@
         n[i] = (char*)malloc(sizeof(char) * 50);
     ```
 * 문자열 길이
-    strlen(문자열)
     ```c
-    #include <string.h> 필요
+    #include <string.h> 
+        strlen(문자열)
     ```
