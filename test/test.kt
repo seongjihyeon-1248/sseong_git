@@ -1,5 +1,5 @@
 fun main(){
-    var a = "Hello Kotlin!"
+    var a = "test"
     println(a)
     /*
         !코틀린 기본 문법!

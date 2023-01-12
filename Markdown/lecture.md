@@ -77,7 +77,7 @@ db.todoDao().getAll().toString()
 db.todoDao().insert(new Todo((mTodoEditText).getText().toString()));
 ```
 
-### kotlin
+### Kotlin
 ##### 준비
 plugins {
     ...
@@ -126,10 +126,24 @@ abstract class AppDatabase : RoomDatabase() {
 ```
 #####  데이터 사용
 ```kotlin
-val db: AppDatabase = Room.databaseBuilder(this, AppDatabase::class.java, "todo-db")
+val db = Room.databaseBuilder(this, AppDatabase::class.java, "todo-db") //this말고 applicationContext도 가능
             .allowMainThreadQueries()
             .build()
 
 db.todoDao().getAll().toString()
 db.todoDao().insert(Todo(todo_edit.text.toString()))
+```
+
+### Livadata
+실시간 데이터 업데이트
+#### Java 예시
+LiveData이용
+```java
+db.todoDao().getAll().observe(this, todos -> { ... }); 
+//getAll을 하여 결과가 변동 될 때 마다 todos에 저장
+```
+#### Kotlin 예시
+```kotlin
+db.todoDao().getAll().observe(this, Observer { ... }); todos ->     // todos ->를 안 쓰면 기본 적으로 it으로 사용됨
+//getAll을 하여 결과가 변동 될 때 마다 todos에 저장
 ```
