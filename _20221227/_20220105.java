@@ -4,7 +4,13 @@ package _20221227;
 import java.util.*;
 
 public class _20220105{
-    public static int Solution(int k, int[] tangerine) {
+    public static void main(String args[]){
+        System.out.println(new Solution().solution(6, new int[] {1, 3, 2, 5, 4, 5, 2, 3}));
+    }
+}
+
+class Solution {
+    public int solution(int k, int[] tangerine) {
         int answer = 0;
         ArrayList<Integer> tan = new ArrayList<Integer>();
         ArrayList<Integer> freq = new ArrayList<Integer>();
@@ -26,8 +32,5 @@ public class _20220105{
                 break;
         }
         return answer;
-    }
-    public static void main(String args[]){
-        System.out.println(Solution(6, new int[] {1, 3, 2, 5, 4, 5, 2, 3}));
     }
 }
