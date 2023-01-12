@@ -117,14 +117,14 @@ interface TodoDao {
     fun delete(todo: Todo)
 }
 ```
-#####  데이터 베이스
+##### 데이터 베이스
 ```kotlin
 @Database(entities = [Todo::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun todoDao(): TodoDao
 }
 ```
-#####  데이터 사용
+##### 데이터 사용
 ```kotlin
 val db = Room.databaseBuilder(this, AppDatabase::class.java, "todo-db") //this말고 applicationContext도 가능
             .allowMainThreadQueries()
@@ -146,4 +146,94 @@ db.todoDao().getAll().observe(this, todos -> { ... });
 ```kotlin
 db.todoDao().getAll().observe(this, Observer { ... }); todos ->     // todos ->를 안 쓰면 기본 적으로 it으로 사용됨
 //getAll을 하여 결과가 변동 될 때 마다 todos에 저장
+```
+
+## viewmodel
+* UI와 로직 분리 -  View상에서 보여주는 데이터를 캡슐화하여 Lifecycle이 변화하여도 데이터를 유지하는 것이다. 
+* View의 Lifecycle에 맞춰 model(데이터)를 유지시킴 (액티비티의 lifecycle)
+* 액티비티가 onDestroy 되던지 onStop 되던지(정상적으로 종료되지 못하더라도) 데이터는 유지
+    * cf) Lifecycle의 범위를 scope라고 함
+* 데이터의 저장과 처리를 분리하는 독립적인 개발이 가능하다는 점에서 유지보수에 용이
+* viewmodel providers - viewmodle을 사용할 수 있도록 해주는 라이브러리 -> 사용
+### Java
+##### 준비
+```
+dependencies{
+    ...
+implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+implementation 'androidx.lifecycle:lifecycle-viewmodel:2.2.0'
+ }
+ ```
+#### 예시
+
+##### viewmoodel
+db 가지고 있음
+inset getall 메소드를 가지고 있음
+기존 메인 액티비티의 변수와 기능을 클래스 변수 혹은 메소드로 정의
+```java
+     public MainViewModel(@NonNull Application application){
+        super(application);
+        db = Room.databaseBuilder(application, AppDatabase.class, "todo-db")
+                .build();
+    }
+    public LiveData<List<Todo>> getAll(){
+        return db.todoDao().getAll();
+    }
+
+    public void insert(Todo todo) {
+        new InsertAsyncTask(db.todoDao())
+                .execute(todo);
+    }
+ ```
+
+##### 데이터 사용
+```java
+MainViewModel viewModel = new ViewModelProvider(this, new ViewModelProvider.AndroidViewModelFactory(getApplication()))
+                .get(MainViewModel.class); //db를 가지고 있는 MainViewModel객체 생성
+
+viewModel.getAll().observe(this, todos -> {
+            mResultTextView.setText(todos.toString());
+        });
+
+viewModel.insert(new Todo((mTodoEditText).getText().toString()));              
+```
+### Kotlin
+##### 준비
+```
+dependencies{
+    ...
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
+ }
+ ```
+ 맨 마지막은 lifecycleScope를 사용하기 위한 종속성 추가임
+#### 예시
+
+##### viewmoodel
+```kotlin
+     public MainViewModel(@NonNull Application application){
+        super(application);
+        db = Room.databaseBuilder(application, AppDatabase.class, "todo-db")
+                .build();
+    }
+    public LiveData<List<Todo>> getAll(){
+        return db.todoDao().getAll();
+    }
+
+    public void insert(Todo todo) {
+        new InsertAsyncTask(db.todoDao())
+                .execute(todo);
+    }
+ ```
+
+##### 데이터 사용
+```kotlin
+val viewModel = ViewModelProviders.of(this)[MainViewModel::class.java] //db를 가지고 있는 MainViewModel객체 생성
+
+viewModel.getAll().observe(this, Observer {todos ->
+            result_text.text = todos.toString()
+        })
+
+viewModel.insert(Todo(todo_edit.text.toString()))             
 ```
