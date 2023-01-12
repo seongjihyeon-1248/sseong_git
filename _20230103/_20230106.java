@@ -4,7 +4,13 @@ package _20230103;
 import java.util.*;
 
 public class _20230106 {
-    public static int solution(int[] topping) {
+    public static void main(String args[]){
+        System.out.println(new Solution().solution(new int[] {1, 2, 1, 3, 1, 4, 1, 2}));
+    }
+}
+
+class Solution {
+    public int solution(int[] topping) {
         int answer = 0;
         ArrayList<Integer> dic = new ArrayList<Integer>();
         ArrayList<Integer> dic_num = new ArrayList<Integer>();
@@ -42,8 +48,5 @@ public class _20230106 {
             }
         }
         return answer;
-    }
-    public static void main(String args[]){
-        System.out.println(solution(new int[] {1, 2, 1, 3, 1, 4, 1, 2}));
     }
 }
