@@ -155,6 +155,11 @@ db.todoDao().getAll().observe(this, Observer { ... }); todos ->     // todos ->�
     * cf) Lifecycle의 범위를 scope라고 함
 * 데이터의 저장과 처리를 분리하는 독립적인 개발이 가능하다는 점에서 유지보수에 용이
 * viewmodel providers - viewmodle을 사용할 수 있도록 해주는 라이브러리 -> 사용
+
+
+db 가지고 있음
+insert getall 메소드를 가지고 있음
+기존 메인 액티비티의 변수와 기능을 클래스 변수 혹은 메소드로 정의
 ### Java
 ##### 준비
 ```
@@ -165,11 +170,6 @@ implementation 'androidx.lifecycle:lifecycle-viewmodel:2.2.0'
  }
  ```
 #### 예시
-
-##### viewmoodel
-db 가지고 있음
-inset getall 메소드를 가지고 있음
-기존 메인 액티비티의 변수와 기능을 클래스 변수 혹은 메소드로 정의
 ```java
      public MainViewModel(@NonNull Application application){
         super(application);
@@ -209,8 +209,6 @@ dependencies{
  ```
  맨 마지막은 lifecycleScope를 사용하기 위한 종속성 추가임
 #### 예시
-
-##### viewmoodel
 ```kotlin
      public MainViewModel(@NonNull Application application){
         super(application);
@@ -237,3 +235,82 @@ viewModel.getAll().observe(this, Observer {todos ->
 
 viewModel.insert(Todo(todo_edit.text.toString()))             
 ```
+
+## DataBinding
+xml파일에 data를 연결(binding)해서 사용할 수 있게 도와주는 라이브러리
+즉, UI 요소와 데이터를 프로그램적 방식으로 연결하지 않고, 선언적 형식으로 결합할 수 있도록 도와주는 라이브러리
+-> UI요소에 연결하기 위해 필요한 코드 최소화 가능
+findViewbyId를 사용하지 않아도 됨
+MVVM패턴을 구현할 때, LiveData와 함께 거의 필수적으로 사용합니다.
+##### 디자인 패턴
+* MVC
+  * Model + View + Controller
+  1. Action -> Controller
+  2. Controller -> (업데이트) -> Model
+  3. controller는 model이 적용될 view 선택
+  4. model -> (적용) -> view
+  * 단순하지만 view와 model 사이의 의존성이 높아져 어플리케이션이 커질 수록 복잡해지고 유지보수가 어려움.
+* MVP
+  * Model + View + Presenter
+  1. Action -> View
+  2. view -> (ask 데이터 줘) -> presenter -> (ask 데이터 줘) -> model
+  3. model -> (데이터) -> presenter -> (데이터) -> View
+  4. 데이터 -> (적용) -> view
+  * view와 model의 의존성이 없지만 view와 presenter 사이의 의존성이 높아짐.
+* MVVM
+  * Model + View + View Model
+  1. Action -> View
+  2. View -> Action(command 패턴) -> View Model
+  3. View Model -> (ask 데이터 줘) -> model
+  4. model -> (데이터) -> View model
+  5. view model 데이터 가공
+  6. View model -> Data Binding -> view
+  * view와 model의 의존성이 없고, view와 model의 의존성이 없지만 view model의 설계가 어려움.
+
+### Java
+```
+android {
+    ...
+    dataBinding{
+        enabled = true
+    }
+}
+```
+xml을 레이아웃 안에 작성해야 함 
+xml태그를 layout루트에 적용해야 함
+```java
+ActivityMainBinding binding =  DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+binding.위젯명 //형태로 사용 가능
+```
+
+-> findViewbyId를 사용하지 않아도 됨.
+
+xml에서 data를 사용할 수 있게 하는 방법
+```java
+<layout ...>
+    <data>
+        <variable
+            name= "뷰모델변수명"
+            type= 사용할 뷰모델 위치... />
+    </data>
+</layout>
+```
+```java
+//binding 객체가 livedata를 사용 가능
+binding.setLifecycleOwner(this);
+
+//xml에 viewmodel 객체를 넣어줌 (xml의 data 부분에서 정의 해줌)
+binding.setViewModel(viewModel);
+```
+
+xml에서 아래처럼 사용 가능
+``` java
+android:text ="@={viewModel.newTodo}"
+android:onClick="@{() -> viewModel.insert(viewModel.newTodo)}"
+android:text="@{viewModel.todos.toString()}"
+```
+위부터 차례로 newTodo에 gettext, newTodo insert, newTodo에 todos 내용들 set
+
+### Kotlin
+자바와 거의 비슷하기에 설명은 생략
