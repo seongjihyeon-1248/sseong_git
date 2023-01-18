@@ -60,14 +60,14 @@ public interface TodoDao {
     void delete(Todo todo);
 }
 ```
-#####  데이터 베이스
+##### 데이터 베이스
 ```java
 @Database(entities = {Todo.class}, version = 1)
 public abstract class AppDatabase extends RoomDatabase {
     public abstract TodoDao todoDao();
 }
 ```
-#####  데이터 사용
+##### 데이터 사용
 ```java
 AppDatabase db = Room.databaseBuilder(this, AppDatabase.class, "todo-db")
                 .allowMainThreadQueries()
