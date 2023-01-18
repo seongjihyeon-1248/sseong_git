@@ -12,33 +12,29 @@ public class _20230117{
 class Solution {
     public long solution(int cap, int n, int[] deliveries, int[] pickups) {
         long answer = 0;
+        int c = cap;
         int del = n - 1;
         int pick = del;
-        ArrayList<Integer> Del = new ArrayList<Integer>();
-        ArrayList<Integer> Pick = new ArrayList<Integer>();
-        
         while(del >= 0 && deliveries[del] == 0)
             del--;
-        while(del >= 0){
-            Del.add(del);
-            for (int i = 0; i < cap; i++){
-                deliveries[del] -= 1;
-                while(del >= 1 && deliveries[del] == 0)
-                    del--;
-            }
-        }
-        
         while(pick >= 0 && pickups[pick] == 0)
             pick--;
-        while(pick >= 0){
-            Pick.add(pick);
-            for (int i = 0; i < cap; i++){
-                System.out.print(pick);
+        
+        while(del >= 0 || pick >= 0){
+            answer += (del > pick) ? del + 1 : pick + 1;
+            while(del >= 0 && c > 0){
+                deliveries[del] -= 1;
+                c--;
+                while(del >= 0 && deliveries[del] == 0)
+                    del--;
+            }
+            while(pick >= 0 && c < cap){
                 pickups[pick] -= 1;
-                while(pick >= 1 && pickups[pick] == 0)
+                c++;
+                while(pick >= 0 && pickups[pick] == 0)
                     pick--;
             }
-        }    
+        }
         
         return 2 * answer;
     }
