@@ -6,36 +6,36 @@ import java.util.*;
 
 public class _20230117{
     public static void main(String args[]){
-        System.out.println(new Solution().solution(2, 7, new int[]{1, 0, 2, 0, 1, 0, 2}, new int[]{0, 2, 0, 1, 0, 2, 0}));
+        System.out.println(new Solution().solution(4, 5, new int[]{1, 0, 3, 1, 2}, new int[]{0, 3, 0, 4, 0}));
     }
 }
 class Solution {
     public long solution(int cap, int n, int[] deliveries, int[] pickups) {
-        long answer = 0;
-        int c = cap;
-        int del = n - 1;
-        int pick = del;
-        while(del >= 0 && deliveries[del] == 0)
-            del--;
-        while(pick >= 0 && pickups[pick] == 0)
-            pick--;
-        
-        while(del >= 0 || pick >= 0){
-            answer += (del > pick) ? del + 1 : pick + 1;
-            while(del >= 0 && c > 0){
-                deliveries[del] -= 1;
-                c--;
-                while(del >= 0 && deliveries[del] == 0)
-                    del--;
-            }
-            while(pick >= 0 && c < cap){
-                pickups[pick] -= 1;
-                c++;
-                while(pick >= 0 && pickups[pick] == 0)
-                    pick--;
-            }
+        long answer = 0, min, max;
+        ArrayList<Integer> Del = new ArrayList<Integer>();
+        ArrayList<Integer> Pick = new ArrayList<Integer>();
+        for(int i = n - 1; i >= 0; i--){
+            for(int ii = 0; ii < deliveries[i]; ii++)
+                Del.add(i);
         }
-        
-        return 2 * answer;
+        for(int i = n - 1; i >= 0; i--){
+            for(int ii = 0; ii < pickups[i]; ii++)
+                Pick.add(i);
+        }
+
+        int a;
+        if(Del.size() < Pick.size()){
+            for(a = 0; a < Del.size(); a+=cap)
+                answer += (Del.get(a) > Pick.get(a)) ? Del.get(a) : Pick.get(a);
+            for(; a < Pick.size(); a+=cap)   
+                answer += Pick.get(a);
+        }
+        else{
+            for(a = 0; a < Pick.size(); a+=cap)
+                answer += (Del.get(a) > Pick.get(a)) ? Del.get(a) : Pick.get(a);
+            for(; a < Del.size(); a+=cap)   
+                answer += Del.get(a);
+        }
+        return 2 * (answer + a / cap);
     }
 }
