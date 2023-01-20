@@ -314,3 +314,103 @@ android:text="@{viewModel.todos.toString()}"
 
 ### Kotlin
 자바와 거의 비슷하기에 설명은 생략
+
+## Navigation
+navigation 뜻은 탐색. 앱 내의 여러 콘텐츠를 탐색하고, 페이지를 왔다 갔다, 들어갔다 되돌아오는 식의 상호작용을 가능하게 함 
+추가로 앱바, 탐색 창 등, 여러가지 탐색으로 구현하도록 하는 기능 제공
+
+fragment 이용
+fragment란 앱 UI의 재사용 가능한 부분을 의미
+navigation이 fragment 포함, main이 navigation 추가
+app bar 생성(메인 fragment가 아니면 뒤로가기 버튼 표시, label이 앱 바 이름에 적용) (tool bar가 더 나음)
+main fragment에서 second fragment로 넘어갈 때 값을 넘겨주며 넘어감
+
+
+### Java
+```
+//navigation
+implementation 'androidx.navigation:navigation-fragment:2.5.3'
+implementation 'androidx.navigation:navigation-ui:2.5.3'
+```
+```
+//값 넘겨주기 (top-level gradle)
+dependencies {
+    ...
+    classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3"
+}
+```
+```
+//값 넘겨주기 
+plugins {
+    ...
+    id 'androidx.navigation.safeargs'
+}
+```
+##### Main
+```java
+public class MainActivity extends AppCompatActivity {
+    AppBarConfiguration appBarConfiguration;
+
+    //버튼 클릭 시 이동
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        /*
+        앱 바를 구성해 lable을 app 이름으로 적용
+        사용자가 다른 대상에 있을 때, 좌측 상단에는 <- 버튼이 표기됨
+        아래 두 줄을 한 줄에 생성 시(onCreate에서 NavController를 검색하고자 하면) 오류
+        NavHostFragment에서 검색해야 함
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+         */
+        NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
+        NavController navController = navHostFragment.getNavController();
+        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+    }
+
+    //좌측 상단 <- 버튼 클릭 시, 본래의 화면으로 돌아오는 코트
+    @Override
+    public boolean onSupportNavigateUp() {
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        return NavigationUI.navigateUp(navController, appBarConfiguration) || super.onSupportNavigateUp();
+    }
+}
+```
+
+##### MainFragment
+```java
+public class MainFragment extends Fragment {
+...
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        MainFragmentDirections.ActionMainFragmentToSecondFragment action = MainFragmentDirections.actionMainFragmentToSecondFragment("Hello!!!");
+
+        view.findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            //버튼 클릭하면 Hello! 라는 메시지가 전달된 second fragment으로 findNacvController를 이용해 목적지로 이동
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(action);
+            }
+        });
+    }
+}
+```
+
+##### SecondFragment
+```java
+public class SecondFragment extends Fragment {
+...
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        //매개변수로 String타입 값을 받아 textview로 출력
+        String text = SecondFragmentArgs.fromBundle(getArguments()).getVar();
+        TextView textView = view.findViewById((R.id.textView));
+        textView.setText(text);
+    }
+}
+```

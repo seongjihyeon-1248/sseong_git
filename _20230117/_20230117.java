@@ -11,7 +11,7 @@ public class _20230117{
 }
 class Solution {
     public long solution(int cap, int n, int[] deliveries, int[] pickups) {
-        long answer = 0, min, max;
+        long answer = 0;
         ArrayList<Integer> Del = new ArrayList<Integer>();
         ArrayList<Integer> Pick = new ArrayList<Integer>();
         for(int i = n - 1; i >= 0; i--){
