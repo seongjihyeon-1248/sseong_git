@@ -2,9 +2,7 @@
 
 package _20230124;
 
-import java.util.*;
-
-public class _20230117{
+public class _20230124{
     public static void main(String args[]){
         System.out.println(new Solution().solution("1S2D*3T"));
     }
