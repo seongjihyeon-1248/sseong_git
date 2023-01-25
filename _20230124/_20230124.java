@@ -10,6 +10,9 @@ public class _20230124{
 class Solution {
     public int solution(String dartResult) {
         int answer = 0;
+        for(int i = 0; i < dartResult.length(); i++){
+            System.out.println(dartResult.substring(i, i + 1));
+        }
         return answer;
     }
 }
