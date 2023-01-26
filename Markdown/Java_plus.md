@@ -1,6 +1,7 @@
 # 자바
-------------------------
-### 구성
+
+## 구성
+
     package 패키지 이름; -> package 안에 들어있으면 클래스 모두 이용 가능
     public class 클래스 이름{ 
         public static void main(String args[]){ -> 실행되는 main
@@ -8,16 +9,19 @@
     }
     의 구조가 일반적
 
-### 출력
+## 출력
+
     System.out.print(출력할 내용); -> 줄 개행 x
     System.out.println(출력할 내용); -> 줄 개행 O
     출력할 내용은 +를 이용하여 입력
 
-### 연산자
+## 연산자
+
     Math.pow(밑, 지수);
         제곱
 
-### 배열
+## 배열
+
     자료형[] 변수이름 = new 자료형[배열의 크기]; (초기화 필요)
     자료형[] 변수이름 = {};
 
@@ -66,24 +70,28 @@
         리스트 최소값
 }
 
-### 문자열
+## 문자열
+
     String 변수이름 = " "
     a.length()
         문자열 길이
     문자열 변수이름.charAt(인덱스)
         해당 인덱스의 문자
 
-### 입출력을 빠르게 하는 방법
+## 입출력을 빠르게 하는 방법
+
     Scanner -> BufferedReader
     System.out.println -> BufferedWriter
 
-### 랜덤
+## 랜덤
+
     random.nextInt(정수)        0 이상, '정수' 미만인 정수 리턴
     random.nextFloat()          float값
     random.nextDouble()         double값
     random.nextBoolean()        boolean값
 
-### 맵
+## 맵
+
     (키, 값) 구조
     import java.util.HashMap;
     HashMap<자료형1, 자료형2> 맵 = new HashMap<>();
