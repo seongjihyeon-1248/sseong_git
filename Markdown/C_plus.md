@@ -10,6 +10,8 @@
 
     ```c
     char **n = (char**)malloc(sizeof(char*) * N);
+    for(int i = 0; i < N; i++)
+        n[i] = (char*) malloc ( sizeof(char) * N);
     ```
 
     ```c
