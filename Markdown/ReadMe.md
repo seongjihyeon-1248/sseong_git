@@ -14,8 +14,8 @@
 
 1. java     F5          디버그 안 될 경우 "public static void main(String args[])"확인
 2. c        Run_code
-3. python
-4. md
+3. python   Run_code
+4. kotlin   Run_code
 
 ## 링크
 
@@ -150,5 +150,5 @@
 
     ```c
     #include <string.h> 
-        strlen(문자열)
+    strlen(문자열)
     ```
