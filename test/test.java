@@ -1,12 +1,6 @@
 package test;
 public class test{
     public static void main(String args[]){
-        System.out.println(new Solution().solution());
+        System.out.print("test");
     }                                   
-}
-
-class Solution {
-    public int solution() {
-        return 0;
-    }
 }
