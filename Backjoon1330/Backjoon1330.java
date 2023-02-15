@@ -1,9 +1,11 @@
 package Backjoon1330;
+
+import java.util.*;
 public class Backjoon1330{
     public static void main(String args[]){
-        int A, B;
-        A = 1;
-        B = 2;
+        Scanner sc = new Scanner(System.in); 
+        int A = sc.nextInt();
+        int B = sc.nextInt();
         if(A < B)           System.out.print("<");
         else if (A > B)     System.out.print(">");
         else                System.out.print("==");
