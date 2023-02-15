@@ -4,8 +4,9 @@ def recursion(idx, N, M, arr, isUsed):
             print(i, end=" ")
         print()
         return
-
-    for i in range(1, N + 1):
+    if(idx > 0): I = arr[idx - 1]
+    else:        I = 1
+    for i in range(I, N + 1):
         if (isUsed[i] == 0):
             isUsed[i] = 1
             arr.append(i)
