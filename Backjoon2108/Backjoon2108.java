@@ -17,21 +17,29 @@ public class Backjoon2108 {
         System.out.println(Math.round(sum / (N + 0.0)));
         Collections.sort(n);
         System.out.println(n.get(N / 2));
-        /* 
-        counter_n = Counter(n).most_common()
-        Max_n = counter_n[0][1]
-        max_n = []
-        for num in counter_n:
-            if num[1] == Max_n:
-                max_n.append(num[0])
-        print(n[(N) // 2])
-        if(len(max_n) > 1):
-            max_n.sort()
-            print(max_n[1])
-        else{
-            print(max_n)
+        ArrayList<Integer> count = new ArrayList<Integer>();
+        HashMap<Integer, Integer> n_counter = new HashMap<Integer, Integer>();
+        for (int i : n) {
+            int cnt = 1;
+            if (n_counter.containsKey(i)) {
+                cnt = n_counter.get(i) + 1;
+                n_counter.remove(i);
+            }
+            n_counter.put(i, cnt);
+            count.add(cnt);
         }
-        */
+        int Max_n = Collections.max(count);
+        ArrayList<Integer> max_n = new ArrayList<Integer>();
+        for (Integer key : n_counter.keySet())
+            if(key == Max_n)
+                max_n.add(n_counter.get(key));
+        if(max_n.size() > 1){
+            Collections.sort(max_n);
+            System.out.println(max_n.get(1));
+        }
+        else{
+            System.out.println(max_n.get(0));
+        }
         System.out.println(Collections.max(n) - Collections.min(n));
     }
 }
