@@ -62,7 +62,9 @@
         두 리스트의 합집합 구하여 list에 저장 (중복도 두 번 저장된 주의)
     Collections.sort(리스트);
         리스트 정렬
-    Collections.sort(n, Comparator.comparing(String::length));
+    Collections.sort(리스트, Collections.reverseOrder())
+        리스트 역정렬
+    (String::length));
         문자열 리스트를 길이를 기준으로 정렬
     Collections.max(리스트)
         리스트 최대값
