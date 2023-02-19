@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Element_Length_of_Array",
+            "request": "launch",
+            "mainClass": "LV_0.Element_Length_of_Array",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
+            "name": "Launch Babbling_1",
+            "request": "launch",
+            "mainClass": "LV_0.Babbling_1",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Launch Backjoon1427",
             "request": "launch",
             "mainClass": "Backjoon1427.Backjoon1427",
