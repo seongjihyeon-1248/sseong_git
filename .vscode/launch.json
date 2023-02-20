@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch The_completion_of_a_triangle",
+            "request": "launch",
+            "mainClass": "LV_0.The_completion_of_a_triangle",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Launch Element_Length_of_Array",
             "request": "launch",
             "mainClass": "LV_0.Element_Length_of_Array",
