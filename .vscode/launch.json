@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Sharing_Pizza_2",
+            "request": "launch",
+            "mainClass": "LV_0.Sharing_Pizza_2",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Launch Find_the_median_value",
             "request": "launch",
             "mainClass": "LV_0.Find_the_median_value",
