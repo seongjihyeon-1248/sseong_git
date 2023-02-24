@@ -1,23 +1,18 @@
 package Backjoon2562;
-
+import java.util.*;
 public class Backjoon2562 {
     public static void main(String args[]){
-        int max = 0, MAX = 0;
-        int[] n = {3,29,38,12,57,74,40,85,61};
-        for(int i = 0; i < 9; i++){
-            if(i == 0){
+        Scanner sc = new Scanner(System.in);
+        int  MAX = 0;
+        int max = sc.nextInt();
+        for(int i = 1; i < 9; i++){
+            int m = sc.nextInt();
+            if(max < m){
                 MAX = i;
-                max = n[i];
-            } 
-            else{
-                if(max < n[i]){
-                    MAX = i;
-                    max = n[i];
-                }
+                max = m;
             }
         }
         System.out.println(max);
         System.out.print(MAX + 1);
     }
-    
 }

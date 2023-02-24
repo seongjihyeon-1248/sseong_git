@@ -1,15 +1,15 @@
 package Backjoon10818;
-
+import java.util.*;
 public class Backjoon10818 {
     public static void main(String args[]){
-        int N = 5;
-        int A[] = {20, 10, 35, 30, 7};
-        int max = A[0];
-        int min = A[0];
-
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int max = sc.nextInt();
+        int min = max;
         for (int i = 1; i < N; i++){
-            if(max < A[i]) max = A[i];
-            if(min > A[i]) min = A[i];
+            int n = sc.nextInt();
+            if(max < n) max = n;
+            if(min > n) min = n;
         }
         System.out.println(min + " " + max);
     }
