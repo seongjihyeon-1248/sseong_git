@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Tic_Tac_To_game_by_myself",
+            "request": "launch",
+            "mainClass": "LV_2.Tic_Tac_To_game_by_myself",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Launch Dart_Game",
             "request": "launch",
             "mainClass": "LV_1.Dart_Game",
