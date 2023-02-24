@@ -1,18 +1,33 @@
 package Backjoon15552;
-import java.io.IOException;
-import java.io.BufferedWriter;
-import java.io.OutputStreamWriter;
+import java.io.*;
+import java.util.*;
 
 public class Backjoon15552{
     public static void main(String args[]) throws IOException {
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        int T = 5;
-        int A[] = {1, 12, 5, 40, 1000};
-        int B[] = {1, 34, 500, 60, 1000}; 
-        int i = 0;
-        while(i < T)
-            bw.write(A[i] + B [i++] + "\n");
-        bw.flush();
-        bw.close(); 
+        try {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+            StringTokenizer st;
+            int t = Integer.parseInt(br.readLine());
+            int a = 0, b = 0, sum = 0;
+
+            for(int i = 0; i < t; i ++) {
+                st = new StringTokenizer(br.readLine());
+                a = Integer.parseInt(st.nextToken());
+                b = Integer.parseInt(st.nextToken());
+
+                sum = a + b;
+
+                bw.write(sum + "\n");
+            }
+
+            bw.flush();
+            bw.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
     }
 }

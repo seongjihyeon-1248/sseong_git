@@ -1,12 +1,16 @@
 package Backjoon2438;
 
+import java.util.*;
+
 public class Backjoon2438 {
     public static void main(String ags[]){
-        int T;
-        int[] A = {1, 12, 5, 40, 1000};
-        int[] B = {1, 34, 500, 60, 1000};
-        T = 5;
-        for(int i = 0; i < T; i++)
-            System.out.println(A[i]+B[i]);
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+
+        for(int i = 1; i < N + 1; i++){
+            for(int ii = 1; ii < i; ii++)
+                System.out.print("*");
+            System.out.println("*");
+        }
     }
 }
