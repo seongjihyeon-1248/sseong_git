@@ -1,19 +1,18 @@
 package Backjoon10809;
+import java.io.*;
 public class Baekjoon10809{
-    public static void main(String args[]){
-        char[] alpa = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm' ,'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int[] num = new int[26];
-        String S = "baekjoon";
-        int i;
-        for(i = 0; i < 26; i++)    
+        for(int i = 0; i < 26; i++)    
             num[i] = -1;
+        String S = br.readLine();
 
-        for (i = 0; i < S.length(); i++)
-            for(int ii = 0; ii < 26; ii++)
-                if(alpa[ii] == S.charAt(i) && num[ii] == -1)
-                    num[ii] = i;
+        for (int i = 0; i < S.length(); i++)
+            if(num[(S.charAt(i) - 'a')] == -1)
+                num[(S.charAt(i) - 'a')] = i;
 
-        for(i = 0; i < 26; i++)    
+        for(int i = 0; i < 26; i++)    
             System.out.print(num[i] + " ");
     }
 }

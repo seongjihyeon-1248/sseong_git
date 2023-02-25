@@ -1,7 +1,9 @@
 package Backjoon1157;
+import java.io.*;
 public class Backjoon1157{
-    public static void main(String args[]){
-        String a = "Mississipi";
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String a = br.readLine();
         int[] alphabet = new int[26];
         String small = "abcdefghijklmnopqrstuvwxyz";
         String big = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
