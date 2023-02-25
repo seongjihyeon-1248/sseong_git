@@ -1,16 +1,15 @@
 package Backjoon11720;
-import java.util.*;
+import java.io.*;
 
 public class Backjoon11720 {
-    public static void main(String args[]){
-        int N, sum = 0;
-        N = 5;
-        int[] Nn = { 5,4,3,2,1 };
-        ArrayList<Integer> n = new ArrayList<Integer>();
-        for (int i = 0; i < N; i++)
-            n.add(Nn[i]);
-        for (int i = 0; i < N; i++)
-            sum += n.get(i);
-        System.out.print(sum);
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int sum = 0;
+        int N = Integer.parseInt(br.readLine());
+        String n = br.readLine();
+        for (int i = 0; i < N; i++){
+            sum += n.charAt(i); 
+        }
+        System.out.print(sum - 48 * N);
     }
 }

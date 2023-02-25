@@ -1,21 +1,19 @@
 package Backjoon1546;
-
+import java.util.*;
 public class Backjoon1546 {
     public static void main(String args[]){
-        int N;
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
         double M = 0.0, sum = 0.0;
-        double[] n = {40.0, 80.0, 60.0};
-        N = 3;
-        int i = 0;
-        for(i = 0; i < N; i++){
-            sum += n[i];
+        for(int i = 0; i < N; i++){
+            double n = sc.nextInt();
+            sum += n;
             if(i == 0)
-                M = n[i];
+                M = n;
             else
-                if(M < n[i])
-                    M = n[i];
+                if(M < n)
+                    M = n;
         }
         System.out.print(sum/N/M*100);
     }
-    
 }
