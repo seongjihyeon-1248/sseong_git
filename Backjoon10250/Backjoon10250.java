@@ -1,12 +1,18 @@
 package Backjoon10250;
-
+import java.util.*; 
 public class Backjoon10250{
     public static void main(String args[]){
-        int T = 2;
-        int[] h = {6, 30};
-        int[] w = {12, 50};
-        int[] n = {10, 72};
-        for(int i = 0; i < T; i++)
-            System.out.println((n[i] % h[i]) * 100 + (n[i] + h[i] - 1) / h[i]);
+        Scanner sc = new Scanner(System.in); 
+        int T = sc.nextInt(); 
+        int h, w, n;
+        for(int i = 0; i < T; i++){
+            h = sc.nextInt(); 
+            w = sc.nextInt(); 
+            n = sc.nextInt(); 
+            if(n % h == 0)
+                System.out.println(h * 100 + (n / h));
+            else
+                System.out.println((n % h) * 100 + (n / h) + 1);
+        }
     }
 }
