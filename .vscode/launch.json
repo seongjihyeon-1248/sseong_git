@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Backjoon10250",
+            "request": "launch",
+            "mainClass": "Backjoon10250.Backjoon10250",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
             "name": "Launch Baekjoon10809",
             "request": "launch",
             "mainClass": "Backjoon10809.Baekjoon10809",
