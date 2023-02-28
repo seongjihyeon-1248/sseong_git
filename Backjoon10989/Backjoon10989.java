@@ -1,19 +1,30 @@
 package Backjoon10989;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
-public class Backjoon10989{
-    public static void main(String args[]){
-        int N = 10;
-        ArrayList<Integer> n = new ArrayList<Integer>();
-        int[] mn = {5, 2, 3, 1, 4, 2, 3, 5, 1, 7};
-        for(int i = 0; i < N; i++)
-            n.add(mn[i]);
-
-        Collections.sort(n);
-
-        for(Integer i : n) 
-            System.out.println(i);
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+ 
+public class Backjoon10989 {
+    public static void main(String[] args) throws IOException {
+        int[] cnt = new int[10001];
+ 
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+ 
+        int N = Integer.parseInt(br.readLine());
+ 
+        for (int i = 0; i < N; i++) {
+            cnt[Integer.parseInt(br.readLine())] ++;
+        }
+ 
+        br.close();
+ 
+        StringBuilder sb = new StringBuilder();
+        for(int i = 1; i < 10001; i++){
+            while(cnt[i] > 0){
+                sb.append(i).append("\n");
+                cnt[i]--;
+            }
+        }
+        System.out.println(sb);
     }
 }

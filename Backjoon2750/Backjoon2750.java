@@ -1,15 +1,14 @@
 package Backjoon2750;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class Backjoon2750{
     public static void main(String args[]){
-        int N = 5;
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
         ArrayList<Integer> n = new ArrayList<Integer>();
-        int[] mn = {5, 4, 3, 2, 1};
         for(int i = 0; i < N; i++)
-            n.add(mn[i]);
+            n.add(sc.nextInt());
 
         Collections.sort(n);
 

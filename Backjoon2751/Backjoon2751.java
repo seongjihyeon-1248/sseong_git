@@ -1,19 +1,22 @@
 package Backjoon2751;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.io.*;
+import java.util.*;
 
-public class Backjoon2751 {
-    public static void main(String args[]){
-        int N = 5;
+public class Backjoon2751{
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int N = Integer.parseInt(br.readLine());
         ArrayList<Integer> n = new ArrayList<Integer>();
-        int[] mn = {5, 4, 3, 2, 1};
         for(int i = 0; i < N; i++)
-            n.add(mn[i]);
+            n.add(Integer.parseInt(br.readLine()));
 
         Collections.sort(n);
 
         for(Integer i : n) 
-            System.out.println(i);
+            bw.write(i + "\n");
+        bw.flush();
+        bw.close();
     }
 }

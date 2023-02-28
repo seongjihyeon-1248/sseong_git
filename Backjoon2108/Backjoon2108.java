@@ -1,16 +1,15 @@
 package Backjoon2108;
 
+import java.io.*;
 import java.util.*;
 
 public class Backjoon2108 {
-    public static void main(String args[]){
-        int N = 5;
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
         ArrayList<Integer> n = new ArrayList<Integer>();
-        n.add(1);
-        n.add(3);
-        n.add(8);
-        n.add(-2);
-        n.add(2);
+        for(int i = 0; i < N; i++)
+            n.add(Integer.parseInt(br.readLine()));
         int sum = 0;
         for(int i : n)
             sum += i;
@@ -31,8 +30,8 @@ public class Backjoon2108 {
         int Max_n = Collections.max(count);
         ArrayList<Integer> max_n = new ArrayList<Integer>();
         for (Integer key : n_counter.keySet())
-            if(key == Max_n)
-                max_n.add(n_counter.get(key));
+            if(n_counter.get(key) == Max_n)
+                max_n.add(key);
         if(max_n.size() > 1){
             Collections.sort(max_n);
             System.out.println(max_n.get(1));
