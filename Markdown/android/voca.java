@@ -1,12 +1,13 @@
 package Markdown.android;
 
-import java.util.*;
+//import java.util.*;
 
 public class voca {
     static void method_a(int a){ 
         System.out.println(a);
     }
     public static void main(String args[]){
+        /* 
         System.out.print("Hello");
         System.out.println("Hello");
         String a = "Hello";
@@ -29,5 +30,6 @@ public class voca {
             default:
                 break;
         }
+        */
     }
 }

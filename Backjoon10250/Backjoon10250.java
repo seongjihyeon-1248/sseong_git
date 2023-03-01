@@ -9,6 +9,7 @@ public class Backjoon10250{
             h = sc.nextInt(); 
             w = sc.nextInt(); 
             n = sc.nextInt(); 
+            sc.close();
             if(n % h == 0)
                 System.out.println(h * 100 + (n / h));
             else

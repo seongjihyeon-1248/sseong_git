@@ -8,7 +8,6 @@ public class Backjoon2981 {
         int N = 3;
         int[] nn = {6, 34, 38};
         ArrayList<Integer> n = new ArrayList<Integer>();
-        int max = nn[0];
         for(int i = 0; i < N; i++)
             n.add(nn[i]);
         for(int i = 2; i < Collections.max(n); i++)

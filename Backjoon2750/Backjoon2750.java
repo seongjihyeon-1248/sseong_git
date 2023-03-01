@@ -9,7 +9,7 @@ public class Backjoon2750{
         ArrayList<Integer> n = new ArrayList<Integer>();
         for(int i = 0; i < N; i++)
             n.add(sc.nextInt());
-
+            sc.close();
         Collections.sort(n);
 
         for(Integer i : n) 
