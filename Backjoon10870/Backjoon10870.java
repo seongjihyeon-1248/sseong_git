@@ -7,8 +7,9 @@ public class Backjoon10870 {
             return fibo(n - 1) + fibo (n - 2); 
         }
     public static void main(String args[]){
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        sc.close();
         System.out.println(fibo(n));
     }
 }

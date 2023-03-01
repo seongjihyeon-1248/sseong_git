@@ -6,9 +6,9 @@ public class Backjoon10872 {
         return n * fac(n - 1);
     }
     public static void main(String args[]){
-        Scanner in = new Scanner(System.in);
-        int N = in.nextInt();
-        in.close();
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        sc.close();
         System.out.print(fac(N));
     }
 }

@@ -6,6 +6,7 @@ public class Backjoon1330{
         Scanner sc = new Scanner(System.in); 
         int A = sc.nextInt();
         int B = sc.nextInt();
+        sc.close();
         if(A < B)           System.out.print("<");
         else if (A > B)     System.out.print(">");
         else                System.out.print("==");

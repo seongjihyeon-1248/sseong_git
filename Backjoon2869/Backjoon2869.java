@@ -6,6 +6,7 @@ public class Backjoon2869 {
         int A = sc.nextInt(); 
         int B = sc.nextInt(); 
         int V = sc.nextInt(); 
+        sc.close();
         int C = (V - B) / (A - B);
         if((V - B) % (A - B) != 0)
             C++;

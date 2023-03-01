@@ -14,6 +14,7 @@ public class Backjoon1546 {
                 if(M < n)
                     M = n;
         }
+        sc.close();
         System.out.print(sum/N/M*100);
     }
 }
