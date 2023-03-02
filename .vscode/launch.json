@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Backjoon2798",
+            "request": "launch",
+            "mainClass": "Backjoon2798.Backjoon2798",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
+            "name": "Backjoon11729",
+            "request": "launch",
+            "mainClass": "Backjoon11729.Backjoon11729",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
+            "name": "Backjoon2447",
+            "request": "launch",
+            "mainClass": "Backjoon2447.Backjoon2447",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
             "name": "Launch Backjoon10872",
             "request": "launch",
             "mainClass": "Backjoon10872.Backjoon10872",

@@ -1,8 +1,10 @@
 package Backjoon2231;
 
+import java.util.Scanner;
 public class Backjoon2231{
     public static void main(String args[]){
-        int N = 216;
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
         for(int i = 1; i < N; i++){
             int temp = i;
             int num = i;
@@ -16,6 +18,7 @@ public class Backjoon2231{
                 break;
             }
         }
+        sc.close();
         if(N != 0)
             System.out.print("0");
     }
