@@ -2,27 +2,33 @@ package Backjoon1764;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.StringTokenizer;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Backjoon1764 {
-    public static void main(String args[]){
-        int N;
-        N = 3;
-        ArrayList<String> n = new ArrayList<String>();
-        String[] nn = {"ohhenrie", "charlie", "baesangwook"};
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        HashSet<String> n = new HashSet<>();
         for(int i = 0; i < N; i++)
-            n.add(nn[i]);
-        int M;
-        M = 4;
+            n.add(br.readLine());
         ArrayList<String> m = new ArrayList<String>();
-        String[] mm = {"obama", "baesangwook", "ohhenrie", "clinton"};
-        for(int i = 0; i < M; i++)
-            m.add(mm[i]);
-        n.retainAll(m);
-        Collections.sort(n);
+        for(int i = 0; i < M; i++){
+            String mm = br.readLine();
+            if (n.contains(mm)) m.add(mm);
+        }
 
-        System.out.println(n.size());
+        Collections.sort(m);
 
-        for(String i : n)
-            System.out.println(i); 
+        sb.append(m.size()).append("\n");
+        for(String i : m)
+            sb.append(i).append("\n"); 
+        System.out.println(sb);
     }
 }

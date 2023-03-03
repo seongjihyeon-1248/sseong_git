@@ -1,44 +1,34 @@
 package Backjoon1620;
 
-import java.util.ArrayList;
-import java.util.Random;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.HashMap;
+import java.util.StringTokenizer;
 
 public class Backjoon1620{
-    public static void main(String args[]){
-        Random random = new Random();
-        HashMap<Integer, String> n = new HashMap<>();
-        int N = 26;
-        int M = 5;
-        String[] nn = {"Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard", 
-            "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree", 
-            "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", 
-            "Rattata", "Raticate", "Spearow", "Fearow", "Ekans", "Arbok",
-            "Pikachu", "Raichu"};
-
-        for (int i = 0; i < N; i++)
-            n.put(i + 1, nn[i]);
-
-        ArrayList<Integer> ran = new ArrayList<Integer>();
-
-        for(int i = 0;  i < M; i++){
-            ran.add(random.nextInt(2 * N));
-            if(ran.get(i) <  N)
-                System.out.println(n.get(ran.get(i)));
-            else
-                System.out.println(ran.get(i) - N + 1);
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        StringBuilder sb = new StringBuilder();
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        HashMap<String, Integer> nn = new HashMap<String, Integer>();
+        String[] n = new String[N + 1];
+        for(int i = 1; i <= N; i++){
+            String a = br.readLine();
+            nn.put(a,i);
+            n[i] = a;
         }
 
-        for(int i = 0;  i < M; i++){
-            if(ran.get(i) <  N){
-                for (Integer key : n.keySet())
-                    if(n.get(ran.get(i)) == n.get(key)){
-                        System.out.println(key);
-                        break;
-                    }
+        for(int i = 0; i < M; i++){
+            String a = br.readLine();
+            try {
+                sb.append(n[Integer.parseInt(a)]).append("\n");
+            } catch (NumberFormatException ex) {
+                sb.append((nn.get(a))).append("\n");
             }
-            else
-                System.out.println(n.get(ran.get(i) - N + 1));
         }
+        System.out.println(sb);
     }
 }

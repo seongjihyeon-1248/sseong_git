@@ -1,30 +1,34 @@
 package Backjoon10816;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.StringTokenizer;
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class Backjoon10816{
-    public static void main(String args[]){
-        int N;
-        N = 10;
-        ArrayList<Integer> n = new ArrayList<Integer>();
-        int[] nn = {6, 3, 2, 10, 10, 10, -10, -10, 7, 3};
-        for(int i = 0; i < N; i++)
-            n.add(nn[i]);
-        int M;
-        M = 8;
-        ArrayList<Integer> m = new ArrayList<Integer>();
-        int[] mm = {10, 9, -5, 2, 3, 4, 5, -10};
-        for(int i = 0; i < M; i++)
-            m.add(mm[i]);
-        
-        int count = 0;
-
-        for(int i = 0; i < M; i++){
-            count = 0;
-            for(int ii = 0; ii < N; ii++)
-                if(m.get(i) == n.get(ii))
-                    count++;
-            System.out.print(count + " ");
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+        int N = Integer.parseInt(br.readLine());
+        HashMap<Integer, Integer> n = new HashMap<Integer, Integer>();
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for(int i = 0; i < N; i++){
+            int cnt = 1;
+            int nn = Integer.parseInt(st.nextToken());
+            if (n.containsKey(nn)) {
+                cnt = n.get(nn) + 1;
+                n.remove(nn);
+            }
+            n.put(nn, cnt);
         }
+        int M = Integer.parseInt(br.readLine());
+        st = new StringTokenizer(br.readLine());
+        for(int i = 0; i < M; i++){
+            int nn = Integer.parseInt(st.nextToken());
+            if (n.containsKey(nn))  sb.append(n.get(nn) + " ");
+            else                    sb.append("0 ");
+        }   
+        System.out.println(sb);
     }
 }
