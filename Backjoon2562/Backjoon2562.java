@@ -12,6 +12,7 @@ public class Backjoon2562 {
                 max = m;
             }
         }
+        sc.close();
         System.out.println(max);
         System.out.print(MAX + 1);
     }

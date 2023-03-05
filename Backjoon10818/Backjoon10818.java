@@ -11,6 +11,7 @@ public class Backjoon10818 {
             if(max < n) max = n;
             if(min > n) min = n;
         }
+        sc.close();
         System.out.println(min + " " + max);
     }
 }

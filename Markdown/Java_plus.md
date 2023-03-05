@@ -82,8 +82,18 @@
 
 ## 입출력을 빠르게 하는 방법
 
-    Scanner -> BufferedReader
-    System.out.println -> BufferedWriter
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+    StringTokenizer st = new StringTokenizer(br.readLine());
+    Integer.parseInt(st.nextToken())
+
+    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+    bw.write("");
+    bw.flush();
+    bw.close();
+
+    StringBuilder sb = new StringBuilder();
+    sb.append((nn.get(a))).append("\n")
 
 ## 랜덤
 

@@ -1,11 +1,14 @@
 package Backjoon1085;
-
+import java.io.*;
+import java.util.StringTokenizer;
 public class Backjoon1085{
-    public static void main(String args[]){
-        int x = 161;
-        int y = 181;
-        int w = 762;
-        int h = 375;
+    public static void main(String args[])throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int x = Integer.parseInt(st.nextToken());
+        int y = Integer.parseInt(st.nextToken());
+        int w = Integer.parseInt(st.nextToken());
+        int h = Integer.parseInt(st.nextToken());
 
         int min = x;
 
