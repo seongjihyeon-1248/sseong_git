@@ -1,23 +1,20 @@
 package Backjoon1037;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Backjoon1037{
-    public static void main(String args[]){
-        int N = 2;
-        int[] n ={4, 2};
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        int[] n = new int[N];
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for(int i = 0; i < N; i++)
+            n[i] = Integer.parseInt(st.nextToken());
         Arrays.sort(n);
-        int ii = 3;
-        while(ii > 0){
-            for(int i = 0; i < N; i++){
-                if(ii % n[i] != 0)
-                    break;
-                if(i == N - 1 && ii != n[i]){
-                    System.out.print(ii);
-                    ii = -1;
-                }
-            }
-            ii++;
-        }
+        System.out.print(n[0] * n[N - 1]);
     }
 }
