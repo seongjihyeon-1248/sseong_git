@@ -1,47 +1,47 @@
 package Backjoon2581;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 public class Backjoon2581 {
-    public static void main(String args[]){
-        int M = 60;
-        int N = 100;
-        int num = N - M + 1;
-        int[] nm = new int[num];
-        int sum = 0;
-        int count = 0;
-        
-        for(int i = 0; i < num; i++)
-        nm[i] = i + M;
-
-        if(nm[0] == 1) 
-            nm[0] = 0;
-
-        for(int i = 2; i < M; i++)
-            for(int ii = 0; ii < num; ii++)
-                if(nm[ii] != 0 && nm[ii] % i == 0) 
-                    nm[ii] = 0;
-
-        for(int i = 0; i < num; i++)
-            if(nm[i] != 0)
-                nm[count++] = nm[i];
-
-        for(int i = 0; i < count; i++)
-            if(nm[i] != 0)
-                for(int ii = i + 1; ii < count; ii++)
-                    if(nm[ii] != 0 && nm[ii] % nm[i] == 0)
-                        nm[ii] = 0;
-
-        num = 0;
-        for(int i = 0; i < count; i++)
-            if(nm[i] != 0)
-                nm[num++] = nm[i];
-        if(num == 0)
-            System.out.print("-1");
-        else{
-            for(int i = 0; i < num; i++)
-                sum += nm[i];
-        
-            System.out.println(sum);
-            System.out.print(nm[0]);
-        }
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		int M = Integer.parseInt(br.readLine());
+		int N = Integer.parseInt(br.readLine());
+		
+		boolean prime[] = new boolean[N + 1];	// 배열 생성 
+		prime = get_prime(prime);
+		
+		// 소수 합 및 최솟값 
+		int sum = 0;
+		int min = Integer.MAX_VALUE;
+		for(int i = M; i <= N; i++) {
+			if(prime[i] == false) {	            // false = 소수 
+				sum += i;
+				if(min == Integer.MAX_VALUE) {	// 첫 소수가 최솟값임  
+					min = i;
+				}
+			}
+		}
+		if(sum == 0) {	                        // 소수가 없다면 
+			System.out.println(-1);
+		}
+		else {
+			System.out.println(sum);
+			System.out.println(min);
+		}
     }
+    public static boolean[] get_prime(boolean prime[]) {
+		prime[0] = true;
+		prime[1] = true;
+		
+		for(int i = 2; i <= Math.sqrt(prime.length); i++) {
+			if(prime[i]) continue;	            // 이미 체크된 배열일 경우 skip
+			for(int j = i * i; j < prime.length; j += i) {
+				prime[j] = true;
+			}
+		}
+        return prime;
+	}
 }
