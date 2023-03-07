@@ -64,7 +64,7 @@
         리스트 정렬
     Collections.sort(리스트, Collections.reverseOrder())
         리스트 역정렬
-    (String::length));
+    (String::length);
         문자열 리스트를 길이를 기준으로 정렬
     Collections.max(리스트)
         리스트 최대값

@@ -3,41 +3,33 @@ package Backjoon1978;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.StringTokenizer;
 
 public class Backjoon1978 {
     public static void main(String args[]) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
+		int count = 0;
+
 		int M = Integer.parseInt(br.readLine());
-		int N = Integer.parseInt(br.readLine());
+		StringTokenizer N = new StringTokenizer(br.readLine());
+		ArrayList<Integer> n = new ArrayList<Integer>();
+		for(int i = 0; i < M; i++)
+			n.add(Integer.parseInt(N.nextToken()));
 		
-		boolean prime[] = new boolean[N + 1];	// 배열 생성 
-		prime = get_prime(prime);
-		
-		// 소수 합 및 최솟값 
-		int sum = 0;
-		int min = Integer.MAX_VALUE;
-		for(int i = M; i <= N; i++) {
-			if(prime[i] == false) {	            // false = 소수 
-				sum += i;
-				if(min == Integer.MAX_VALUE) {	// 첫 소수가 최솟값임  
-					min = i;
-				}
-			}
-		}
-		if(sum == 0) {	                        // 소수가 없다면 
-			System.out.println(-1);
-		}
-		else {
-			System.out.println(sum);
-			System.out.println(min);
-		}
+		boolean prime[] = new boolean[Collections.max(n) + 1];	// 배열 생성 
+		prime = get_prime(prime, Collections.max(n));
+		for(int i : n)
+			if(prime[i] == false)
+				count++;
+		System.out.print(count);
     }
-    public static boolean[] get_prime(boolean prime[]) {
+    public static boolean[] get_prime(boolean prime[], int max) {
 		prime[0] = true;
 		prime[1] = true;
 		
-		for(int i = 2; i <= Math.sqrt(prime.length); i++) {
+		for(int i = 2; i <= Math.sqrt(max); i++) {
 			if(prime[i]) continue;	            // 이미 체크된 배열일 경우 skip
 			for(int j = i * i; j < prime.length; j += i) {
 				prime[j] = true;
