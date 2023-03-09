@@ -1,40 +1,37 @@
 package Backjoon1929;
 
-public class Backjoon1929{
-    public static void main(String args[]){
-        int M = 3;
-        int N = 16;
-        int num = N - M + 1;
-        int[] nm = new int[num];
-        int count = 0;
-        
-        for(int i = 0; i < num; i++)
-        nm[i] = i + M;
-
-        if(nm[0] == 1) 
-            nm[0] = 0;
-
-        for(int i = 2; i < M; i++)
-            for(int ii = 0; ii < num; ii++)
-                if(nm[ii] != 0 && nm[ii] % i == 0) 
-                    nm[ii] = 0;
-
-        for(int i = 0; i < num; i++)
-            if(nm[i] != 0)
-                nm[count++] = nm[i];
-
-        for(int i = 0; i < count; i++)
-            if(nm[i] != 0)
-                for(int ii = i + 1; ii < count; ii++)
-                    if(nm[ii] != 0 && nm[ii] % nm[i] == 0)
-                        nm[ii] = 0;
-
-        num = 0;
-        for(int i = 0; i < count; i++)
-            if(nm[i] != 0)
-                nm[num++] = nm[i];
-        
-        for(int i = 0; i < num; i++)
-            System.out.println(nm[i]);
-    }
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+ 
+public class Backjoon1929 {
+	public static void get_prime(boolean[] prime) { 
+		prime[0] = prime[1] = true;
+		
+		for(int i = 2; i <= Math.sqrt(prime.length); i++) {
+			if(prime[i]) continue;
+			for(int j = i * i; j < prime.length; j += i) {
+				prime[j] = true;
+			}
+		}
+	}
+    
+	public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        StringBuilder sb = new StringBuilder();
+        boolean[] prime;
+		int M = Integer.parseInt(st.nextToken());
+		int N = Integer.parseInt(st.nextToken());
+		
+		prime = new boolean[N + 1];
+		get_prime(prime);
+				
+		for(int i = M; i <= N; i++) {
+			if(!prime[i]) 
+                sb.append(i).append("\n");
+		}
+        System.out.println(sb);
+	}
 }

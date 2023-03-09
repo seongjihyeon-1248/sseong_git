@@ -1,23 +1,26 @@
 package Backjoon1934;
 
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Backjoon1934 {
     public static int gcd(int num1, int num2){
         if(num2 == 0) return num1;
         else return gcd(num2, num1 % num2);
     }
-    public static void main(String args[]){
-        int T = 3;
-        int[] a = {1, 6, 13};
-        int[] b = {45000, 10, 17};
-        ArrayList<Integer> A = new ArrayList<Integer>();
-        ArrayList<Integer> B = new ArrayList<Integer>();
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        StringBuilder sb = new StringBuilder();
+        int T = Integer.parseInt(br.readLine());
         for(int i = 0; i < T; i++){
-            A.add(a[i]);
-            B.add(b[i]);
+            st = new StringTokenizer(br.readLine()); 
+            int a = Integer.parseInt(st.nextToken());
+            int b =Integer.parseInt(st.nextToken());
+            sb.append((a * b) / gcd(a, b)).append("\n");
         }
-        for(int i = 0; i < T; i++)
-            System.out.println((A.get(i) * B.get(i)) / gcd(A.get(i), B.get(i)));
+        System.out.print(sb);
     }
 }
