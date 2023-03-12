@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Find_the_numbers",
+            "request": "launch",
+            "mainClass": "LV_0.Find_the_numbers",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Backjoon1934",
             "request": "launch",
             "mainClass": "Backjoon1934.Backjoon1934",
