@@ -7,6 +7,7 @@ public class Draw_a_rectangle_star{
         Scanner sc = new Scanner(System.in);
         int a = sc.nextInt();
         int b = sc.nextInt();
+        sc.close();
         for(int i = 0; i < b; i++){
             for(int ii = 1; ii < a; ii++){
                 System.out.print("*");

@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Backjoon1000",
+            "request": "launch",
+            "mainClass": "Backjoon1000.Backjoon1000",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
+            "name": "Backjoon2557",
+            "request": "launch",
+            "mainClass": "Backjoon2557.Backjoon2557",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
             "name": "Find_the_numbers",
             "request": "launch",
             "mainClass": "LV_0.Find_the_numbers",
