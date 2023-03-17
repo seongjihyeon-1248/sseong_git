@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Backjoon10171",
+            "request": "launch",
+            "mainClass": "Backjoon.Backjoon10171",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Overpainting",
             "request": "launch",
             "mainClass": "LV_2.Overpainting",

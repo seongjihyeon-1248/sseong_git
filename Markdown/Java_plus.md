@@ -32,7 +32,7 @@
     ArrayList<타입> n = new ArrayList<타입>();
     ArrayList<타입> n = new ArrayList<타입>(인덱스 수 지정);
         Arraylist 생성
-    ex)ArrayList<Integer> n = new ArrayList<Integer>();
+    ex.ArrayList<Integer> n = new ArrayList<Integer>();
        ArrayList<타입> n = new ArrayList<타입>(Arrays.asList(1,2,3); -> 값 추가하면서 생성
     list.add(index,value), list.add(value), list.add(null)
         값 추가
@@ -48,7 +48,7 @@
         리스트 크기
     list.get(인덱스)
         해당 인덱스의 값 가져오기
-    ex) for(Integer i : list) 
+    ex. for(Integer i : list) 
         ber(i)
         for문을 이용하는 예시
     System.out.println(list.contains(검색할 값)) -> 없으면 false, 있다면 true 반환
@@ -70,7 +70,7 @@
         리스트 최대값
     Collections.min(리스트) 
         리스트 최소값
-}
+
 
 ## 문자열
 

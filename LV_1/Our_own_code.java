@@ -1,8 +1,6 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/17682
 package LV_1;
 
-import java.util.*;
-
 public class Our_own_code{
     public static void main(String args[]){
         System.out.println(new Solution_Our_own_code().solution("aukks", "wbqd", 5));
