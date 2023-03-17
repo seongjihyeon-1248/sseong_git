@@ -71,7 +71,6 @@
     Collections.min(리스트) 
         리스트 최소값
 
-
 ## 문자열
 
     String 변수이름 = " "
