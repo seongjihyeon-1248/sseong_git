@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Backjoon11718",
+            "request": "launch",
+            "mainClass": "Backjoon.Backjoon11718",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
             "name": "Babbling",
             "request": "launch",
             "mainClass": "LV_0.Babbling",
