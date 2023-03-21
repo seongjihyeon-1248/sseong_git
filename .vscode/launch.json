@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Flip_natural_over_number_to_form_an_array",
+            "request": "launch",
+            "mainClass": "LV_1.Flip_natural_over_number_to_form_an_array",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
             "name": "Backjoon11718",
             "request": "launch",
             "mainClass": "Backjoon.Backjoon11718",
