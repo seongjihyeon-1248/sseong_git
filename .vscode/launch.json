@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Backjoon2738",
+            "request": "launch",
+            "mainClass": "Backjoon.Backjoon2738",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Billiard_practice",
             "request": "launch",
             "mainClass": "LV_2.Billiard_practice",
