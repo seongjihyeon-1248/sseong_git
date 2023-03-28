@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Backjoon10101",
+            "request": "launch",
+            "mainClass": "Backjoon.Backjoon10101",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
             "name": "The_search_for_divisors",
             "request": "launch",
             "mainClass": "LV_0.The_search_for_divisors",
