@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Backjoon4948",
+            "request": "launch",
+            "mainClass": "Backjoon4948.Backjoon4948",
+            "projectName": "sseong_git_220d2bd8"
+        }
+    ]
+}
