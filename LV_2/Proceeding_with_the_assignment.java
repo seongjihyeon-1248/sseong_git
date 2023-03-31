@@ -14,7 +14,8 @@ public class Proceeding_with_the_assignment{
 
 class Solution_Proceeding_with_the_assignment{
     public String[] solution(String[][] plans) {
-        String[] answer = {};
+        String[] answer = new String[plans.length];
+        int ans = 0;
         HashMap<Integer, Integer> a = new HashMap<Integer, Integer>();
         for(int i = 0; i < plans.length; i++)
             a.put(Integer.parseInt(plans[i][1].substring(0,2)) * 60 + Integer.parseInt(plans[i][1].substring(3)), i);
@@ -24,12 +25,21 @@ class Solution_Proceeding_with_the_assignment{
     
         for(int i = 1; i < keySet.size(); i++)
 		{
-            plans[a.get(keySet.get(i - 1))][2] = "" + (Integer.parseInt(plans[a.get(keySet.get(i-1))][2]) - (keySet.get(i) - keySet.get(i - 1)));
-            if(Integer.parseInt(plans[a.get(keySet.get(i - 1))][2]) <= 0){
-                keySet.remove(i - 1);
-                i--;
+            int time = keySet.get(i - 1);
+            while(i > 0){
+                time += Integer.parseInt(plans[a.get(keySet.get(i-1))][2]);
+                plans[a.get(keySet.get(i - 1))][2] = "" + (time - keySet.get(i));
+                if(Integer.parseInt(plans[a.get(keySet.get(i - 1))][2]) <= 0){
+                    answer[ans++] = plans[a.get(keySet.get(i - 1))][0];
+                    keySet.remove(i - 1);
+                    i--;
+                }
+                else break;
             }
 		}
+        Collections.sort(keySet, Collections.reverseOrder());
+        for(Integer i : keySet)
+            answer[ans++] = plans[a.get(i)][0];
         return answer;
     }
 }
