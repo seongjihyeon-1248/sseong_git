@@ -24,9 +24,8 @@ class Solution_Proceeding_with_the_assignment{
     
         for(int i = 1; i < keySet.size(); i++)
 		{
-            plans[a.get(keySet.get(i))][2] = "" + (Integer.parseInt(plans[a.get(keySet.get(i))][2]) - (keySet.get(i) - keySet.get(i - 1)));
-            if(Integer.parseInt(plans[a.get(keySet.get(i))][2]) <= 0){
-                System.out.println(plans[a.get(keySet.get(i - 1))][0]);
+            plans[a.get(keySet.get(i - 1))][2] = "" + (Integer.parseInt(plans[a.get(keySet.get(i-1))][2]) - (keySet.get(i) - keySet.get(i - 1)));
+            if(Integer.parseInt(plans[a.get(keySet.get(i - 1))][2]) <= 0){
                 keySet.remove(i - 1);
                 i--;
             }
