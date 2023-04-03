@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Backjoon1010",
+            "request": "launch",
+            "mainClass": "Backjoon1010.Backjoon1010",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
+            "name": "Factorial",
+            "request": "launch",
+            "mainClass": "LV_0.Factorial",
+            "projectName": "sseong_git_220d2bd8"
+        }
+    ]
+}

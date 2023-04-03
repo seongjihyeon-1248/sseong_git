@@ -1,20 +1,26 @@
 package Backjoon1010;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.StringTokenizer;
 
 public class Backjoon1010{
-    public static void main(String args[]){
-        int T = 3;
-        int[] n = {2, 1, 13}; 
-        int[] m = {2, 5, 29};
+    public static void main(String args[]) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
         ArrayList<Integer> N = new ArrayList<Integer>();
         ArrayList<Integer> M = new ArrayList<Integer>();
         for(int i = 0; i < T; i++){
-            if(m[i] - n[i] > n[i])
-                N.add(m[i] - n[i]);
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            int n = Integer.parseInt(st.nextToken());
+            int m = Integer.parseInt(st.nextToken());
+            if(m - n > n)
+                N.add(m - n);
             else
-                N.add(n[i]);
-            M.add(m[i]);
+                N.add(n);
+            M.add(m);
         }
         long nn, mm;
         for(int i = 0; i < T; i++){
