@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Backjoon10828",
+            "request": "launch",
+            "mainClass": "Backjoon.Backjoon10828",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Finding_Kim_in_Seoul",
             "request": "launch",
             "mainClass": "LV_1.Finding_Kim_in_Seoul",
