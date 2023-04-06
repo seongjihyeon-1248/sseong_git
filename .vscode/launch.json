@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Sum_of_successive_partial_sequences",
+            "request": "launch",
+            "mainClass": "LV_2.Sum_of_successive_partial_sequences",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Backjoon10828",
             "request": "launch",
             "mainClass": "Backjoon.Backjoon10828",
