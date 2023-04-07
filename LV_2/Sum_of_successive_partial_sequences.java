@@ -2,7 +2,9 @@
 package LV_2;
 public class Sum_of_successive_partial_sequences{
     public static void main(String args[]){
-        System.out.println(new Solution_Sum_of_successive_partial_sequences().solution(new int[]{1, 2, 3, 4, 5}, 15));
+        int[] answer = new Solution_Sum_of_successive_partial_sequences().solution(new int[]{1, 2, 3, 4, 5}, 7);
+        System.out.println(answer[0]);
+        System.out.println(answer[1]);
     }
 }
 
