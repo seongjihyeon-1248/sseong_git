@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "The_product_of_two_numbers",
+            "request": "launch",
+            "mainClass": "LV_0.The_product_of_two_numbers",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Backjoon1874",
             "request": "launch",
             "mainClass": "Backjoon.Backjoon1874",
