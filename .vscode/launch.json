@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Pockenmon",
+            "request": "launch",
+            "mainClass": "LV_1.Pockenmon",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "The_product_of_two_numbers",
             "request": "launch",
             "mainClass": "LV_0.The_product_of_two_numbers",
