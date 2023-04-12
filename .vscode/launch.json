@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Backjoon11718",
+            "request": "launch",
+            "mainClass": "Backjoon11718",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
+            "name": "Backjoon1000",
+            "request": "launch",
+            "mainClass": "Backjoon1000",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Pockenmon",
             "request": "launch",
             "mainClass": "LV_1.Pockenmon",
