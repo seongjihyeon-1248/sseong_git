@@ -69,6 +69,8 @@
         리스트 최대값
     Collections.min(리스트) 
         리스트 최소값
+    ArrayList<int[]> mylist = new ArrayList<int[]>();
+        자바에 배열 추가
 
 ## 문자열
 

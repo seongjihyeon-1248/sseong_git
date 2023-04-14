@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Mining_for_minerals",
+            "request": "launch",
+            "mainClass": "LV_2.Mining_for_minerals",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
             "name": "Backjoon11718",
             "request": "launch",
             "mainClass": "Backjoon11718",
