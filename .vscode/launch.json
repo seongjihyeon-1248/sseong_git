@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Repeated_text_printing",
+            "request": "launch",
+            "mainClass": "LV_0.Repeated_text_printing",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Mining_for_minerals",
             "request": "launch",
             "mainClass": "LV_2.Mining_for_minerals",
