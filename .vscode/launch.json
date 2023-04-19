@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "The_age_of_an_alien_planet",
+            "request": "launch",
+            "mainClass": "LV_0.The_age_of_an_alien_planet",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Repeated_text_printing",
             "request": "launch",
             "mainClass": "LV_0.Repeated_text_printing",
