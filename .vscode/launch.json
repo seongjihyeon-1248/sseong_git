@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "A_hall_of_fame",
+            "request": "launch",
+            "mainClass": "LV_1.A_hall_of_fame",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "The_age_of_an_alien_planet",
             "request": "launch",
             "mainClass": "LV_0.The_age_of_an_alien_planet",
