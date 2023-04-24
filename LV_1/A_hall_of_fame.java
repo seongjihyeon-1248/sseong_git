@@ -1,3 +1,4 @@
+//https://school.programmers.co.kr/learn/courses/30/lessons/138477
 package LV_1;
 
 class A_hall_of_fame{

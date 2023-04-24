@@ -1,3 +1,4 @@
+//https://school.programmers.co.kr/learn/courses/30/lessons/12919
 package LV_1;
 
 class Finding_Kim_in_Seoul{

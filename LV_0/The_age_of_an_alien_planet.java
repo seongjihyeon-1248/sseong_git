@@ -1,3 +1,4 @@
+//https://school.programmers.co.kr/learn/courses/30/lessons/120834
 package LV_0;
 
 public class The_age_of_an_alien_planet {

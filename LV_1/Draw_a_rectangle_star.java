@@ -1,3 +1,4 @@
+//https://school.programmers.co.kr/learn/courses/30/lessons/12969
 package LV_1;
 
 import java.util.Scanner;
