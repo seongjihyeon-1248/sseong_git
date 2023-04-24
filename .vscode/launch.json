@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Crane_claw_machine_game",
+            "request": "launch",
+            "mainClass": "LV_1.Crane_claw_machine_game",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
             "name": "A_hall_of_fame",
             "request": "launch",
             "mainClass": "LV_1.A_hall_of_fame",
