@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "An_interception_system",
+            "request": "launch",
+            "mainClass": "LV_2.An_interception_system",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
             "name": "Crane_claw_machine_game",
             "request": "launch",
             "mainClass": "LV_1.Crane_claw_machine_game",
