@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "An_integer_pair_between_two_circles",
+            "request": "launch",
+            "mainClass": "LV_2.An_integer_pair_between_two_circles",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "An_interception_system",
             "request": "launch",
             "mainClass": "LV_2.An_interception_system",
