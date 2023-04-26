@@ -3,7 +3,7 @@ package LV_2;
 
 public class An_integer_pair_between_two_circles {
     public static void main(String args[]){
-        System.out.println(new Solution_An_integer_pair_between_two_circles().solution(90000,100000));
+        System.out.println(new Solution_An_integer_pair_between_two_circles().solution(2,3));
     }
 }
 
