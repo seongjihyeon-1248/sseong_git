@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Flip_the_array",
+            "request": "launch",
+            "mainClass": "LV_0.Flip_the_array",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
             "name": "An_integer_pair_between_two_circles",
             "request": "launch",
             "mainClass": "LV_2.An_integer_pair_between_two_circles",
