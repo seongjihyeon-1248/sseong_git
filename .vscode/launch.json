@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "A_runner_who_failed_to_finish",
+            "request": "launch",
+            "mainClass": "LV_1.A_runner_who_failed_to_finish",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Flip_the_array",
             "request": "launch",
             "mainClass": "LV_0.Flip_the_array",
