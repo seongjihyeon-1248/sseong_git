@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Simple_logical_operations",
+            "request": "launch",
+            "mainClass": "LV_0.Simple_logical_operations",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "A_runner_who_failed_to_finish",
             "request": "launch",
             "mainClass": "LV_1.A_runner_who_failed_to_finish",
