@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Determining_the_sqare_root_of_an_integer",
+            "request": "launch",
+            "mainClass": "LV_1.Determining_the_sqare_root_of_an_integer",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Simple_logical_operations",
             "request": "launch",
             "mainClass": "LV_0.Simple_logical_operations",
