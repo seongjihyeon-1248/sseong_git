@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Ricochet_robot",
+            "request": "launch",
+            "mainClass": "LV_2.Ricochet_robot",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
             "name": "Determining_the_sqare_root_of_an_integer",
             "request": "launch",
             "mainClass": "LV_1.Determining_the_sqare_root_of_an_integer",
