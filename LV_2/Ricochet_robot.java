@@ -43,7 +43,6 @@ class Solution_icochet_robot {
                 }
             }
         }
-
         return bfs(board, robot, goal);
     }
 
@@ -81,7 +80,6 @@ class Solution_icochet_robot {
                 qu.add(new Moving(nx, ny, cn.depth + 1));
             }
         }
-
         return -1;
     }
 
