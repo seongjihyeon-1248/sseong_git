@@ -1,5 +1,10 @@
 # 자바
 
+BFS
+
+* Escape_the_maze
+* Ricochet_robot
+
 ## 구성
 
     package 패키지 이름; -> package 안에 들어있으면 클래스 모두 이용 가능
