@@ -67,16 +67,21 @@ class Solution_Escape_the_maze {
             }
         }
         answer = bfs(startPos.x, startPos.y, maps.length, maps[0].length(), leverPos.x, leverPos.y);
+        //start에서 레버까지로의 경로가 있을 경우
         if(answer > -1)
         {
+            //방문 노드 초기화
             visited = new boolean[map.length][map[0].length];
-            
             int temp = bfs(leverPos.x, leverPos.y, maps.length, maps[0].length(), endPos.x, endPos.y);
+            //레버에서 end까지로의 경로가 있을 경우 
             if(temp == -1)
-                answer = -1;
+                return -1;
+            //레버에서 end까지로의 경로가 있을 경우 
             else
+                //start에서 레버로까지의 최소 경로와 
                 answer += temp;
         }
+        ///start에서 레버로까지의 경로가 없을 경우
         return answer;
     }
 }
