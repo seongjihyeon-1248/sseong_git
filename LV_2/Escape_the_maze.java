@@ -57,12 +57,16 @@ class Solution_Escape_the_maze {
         Pos endPos = null;
         for(int i = 0; i < maps.length; i++) {            
             for(int j = 0; j < maps[i].length(); j++) {
+                //시작 좌표를 가진 객체를 생성
                 if(maps[i].charAt(j) == 'S')
                     startPos = new Pos(i, j, 0);
+                //중간 지점 좌표를 가진 객체를 생성
                 if(maps[i].charAt(j) == 'L')
                     leverPos = new Pos(i, j, 0);
+                //끝 좌표를 가진 객체를 생성
                 if(maps[i].charAt(j) == 'E')
                     endPos = new Pos(i, j, 0);
+                //매개변수로 받은 string 배열을 2차원 배열의 형태로 만들기 위해 map 배열에 삽입
                 map[i][j] = maps[i].charAt(j);
             }
         }
