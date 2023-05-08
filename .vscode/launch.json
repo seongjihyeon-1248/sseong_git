@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Countdown",
+            "request": "launch",
+            "mainClass": "LV_0.Countdown",
+            "projectName": "sseong_git_220d2bd8"
+        },
+        {
+            "type": "java",
             "name": "Escape_the_maze",
             "request": "launch",
             "mainClass": "LV_2.Escape_the_maze",
