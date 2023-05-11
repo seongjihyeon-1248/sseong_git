@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "String_division",
+            "request": "launch",
+            "mainClass": "LV_1.String_division",
+            "projectName": "sseong_git_993e2b5f"
+        },
+        {
+            "type": "java",
             "name": "Escape_the_maze",
             "request": "launch",
             "mainClass": "LV_2.Escape_the_maze",
