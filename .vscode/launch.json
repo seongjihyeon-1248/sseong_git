@@ -2,10 +2,17 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
             "name": "String_division",
             "request": "launch",
             "mainClass": "LV_1.String_division",
             "projectName": "sseong_git_993e2b5f"
+=======
+            "name": "Countdown",
+            "request": "launch",
+            "mainClass": "LV_0.Countdown",
+            "projectName": "sseong_git_220d2bd8"
+>>>>>>> 6be270dc1460835ca642b2fa221533e54a4374df
         },
         {
             "type": "java",
