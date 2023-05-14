@@ -1,5 +1,5 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/161989
-package LV_2;
+package LV_1;
 public class Overpainting{
     public static void main(String args[]){
         System.out.println(new Solution_Overpainting().solution(8, 4, new int[]{2,3,6}));
