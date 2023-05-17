@@ -16,11 +16,9 @@ class Solution_Food_Fighter {
             int end = food[i] / 2;
             for(int j = 0; j < end; j++) {
                 player1.append(i); 
-                player2.insert(0, i); 
             }
         }
-
-        player1.append("0").append(player2.toString());
-        return player1.toString();
+        player2.append(player1);
+        return (player1.append("0").append(player2.reverse())).toString();
     }
 }

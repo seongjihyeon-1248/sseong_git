@@ -99,6 +99,9 @@ BFS
 
     StringBuilder sb = new StringBuilder();
     sb.append((nn.get(a))).append("\n")
+    StringBuilder에 다른 StringBuilder를 대입하면 주소가 같아지는 듯함
+    그러므로 대입하고 싶을 때는 sb1 = sb2의 형태가 아닌 sb1.append(sb2)인 편이 좋음
+    문자열 뒤집기 -> sb.reverse() 가 편함
 
 ## 랜덤
 
