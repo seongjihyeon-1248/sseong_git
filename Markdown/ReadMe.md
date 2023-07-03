@@ -13,6 +13,7 @@
 ## Visual Stdio Code 이용 규칙
 
 1. java     F5          디버그 안 될 경우 "public static void main(String args[])"확인
+                        class 찾을 수 없다는 경우 터미널에 java clean
 2. c        Run_code
 3. python   Run_code
 4. kotlin   Run_code
@@ -102,6 +103,7 @@
   * 1934  최소공배수
   * 1929  소수 구하기
   * 4948  베르트랑 공준
+
 * DFS & BFS
   * 1260 DFS와 BFS
   * 2178 미로 탐색
