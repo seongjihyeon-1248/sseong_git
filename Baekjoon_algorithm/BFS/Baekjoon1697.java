@@ -21,8 +21,7 @@ public class Baekjoon1697 {
 		N = Integer.valueOf(inputs[0]);
 		K = Integer.valueOf(inputs[1]);
 		
-		int result = bfs(N);
-		System.out.println(result);
+		System.out.println(bfs(N));
 	}
 
 	private static int  bfs(int node)
@@ -37,10 +36,9 @@ public class Baekjoon1697 {
 		{
 			n = queue.remove();
 			
+            //목표에 도달
 			if (n == K)
-			{
 				return visited[n]-1;
-			}
 			
 			if (n-1>=0 && visited[n-1] == 0)
 			{
