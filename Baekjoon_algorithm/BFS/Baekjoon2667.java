@@ -63,7 +63,6 @@ public class Baekjoon2667 {
                 }
             }
         }
-
         return count;
     }
 }
