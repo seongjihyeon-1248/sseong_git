@@ -29,9 +29,9 @@ class Solution_Seesaw {
                     count++;
             }
             answer += ((same - 1) + count * 2) * same / 2;
-            System.out.println(same + " " + count + " " + (((same - 1) + count * 2) * same / 2));
             same = 1;
         }
-        return answer + (same - 1) * same / 2;
+        answer += (same - 1) * same / 2;
+        return answer;
     }
 }
