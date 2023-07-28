@@ -14,16 +14,16 @@ class Solution_Simmilar_bit {
         answer = 0;
         L = l;
         R = r;
-        a(1, n);
+        count(1, n);
         return answer;
     }
-    void a(int one, int n){
+    void count(int one, int n){
         if(one <= R){
            if(n > 0){
-                a(one * 5 - 4, n - 1);
-                a(one * 5 - 3, n - 1);
-                a(one * 5 - 1, n - 1);
-                a(one * 5, n - 1);
+                count(one * 5 - 4, n - 1);
+                count(one * 5 - 3, n - 1);
+                count(one * 5 - 1, n - 1);
+                count(one * 5, n - 1);
             }
             else{
                 if(L <= one)
