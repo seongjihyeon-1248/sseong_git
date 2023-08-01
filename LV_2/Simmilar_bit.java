@@ -1,3 +1,4 @@
+//https://school.programmers.co.kr/learn/courses/30/lessons/148652
 package LV_2;
 
 public class Simmilar_bit {
@@ -17,7 +18,7 @@ class Solution_Simmilar_bit {
         count(1, n);
         return answer;
     }
-    void count(int one, int n){
+    void count(long one, int n){
         if(one <= R){
            if(n > 0){
                 count(one * 5 - 4, n - 1);
