@@ -2,7 +2,6 @@
 package LV_3;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class Schedule {
     public static void main(String args[]){
@@ -11,62 +10,39 @@ public class Schedule {
 }
 
 class Solution_Schedule {
+    ArrayList<Integer> ans;
+    int[][] k_n;
+    int K;
+    int N;
     public int solution(int k, int n, int[][] reqs) {
         int answer = 0;
+        K = k;
+        N = n;
+        k_n = new int[k + 1][n-k+2];
+        ans = new ArrayList<>();
         ArrayList<Integer>[] list = new ArrayList[k + 1];
-        for(int i = 1; i < k + 1; i++)
-            list[i] = new ArrayList<>();
-        for(int[] req : reqs){
-            //시간이 지난 스케줄러 삭제
-            for(int i = 1; i <= k; i++){
-                for(int ii = 1; ii < list[i].size(); ii++){
-                    if(list[i].get(ii) <= req[0]){
-                        list[i].remove(ii);
-                        ii--;
-                    }
+        for(int i = 1; i < n-k+2; i++){
+            //스케줄러 초기화
+            for(int ii = 1; ii < k + 1; ii++)
+                list[ii] = new ArrayList<>();
+            for(int ii = 1; ii < k + 1; ii++)
+                for(int iii = 0; iii < i; iii++)
+                    list[ii].add(0);
+            //i명의 멘토가 있을 경우의 대기 시간 구하여 배열에 저장
+            for(int[] req: reqs){
+                int Min = 0;
+                for(int ii = 1; ii < i; ii++){
+                    if(list[req[2]].get(ii) < list[req[2]].get(Min))
+                        Min = ii;
                 }
-            }
-            //해당 유형의 스케줄러가 없을 때
-            if(list[req[2]].size() == 0){
-                list[req[2]].add(req[0]+req[1]);
-            }
-            //해당 유형의 스케줄러가 있을 때
-            else{
-                //N은 사용되고 있는 스케줄러
-                int N = 0;
-                for(int i = 1; i < k + 1; i++){
-                    if(list[i].size() == 0) N++;
-                    else N += list[i].size();
-                }
-                //쉬고 있는 스케줄러가 있을 때
-                if(N < n){
-                    list[req[2]].add(req[0]+req[1]);
-                    Collections.sort(list[req[2]]);
-                }
-                //쉬고 있는 스케줄러가 없을 때
+                if(list[req[2]].get(Min) < req[0]) 
+                    list[req[2]].set(Min, req[0] + req[1]);
                 else{
-                    int Min = req[2];
-                    int min = list[req[2]].get(0);
-                    for(int i = 1; i < k + 1; i++){
-                        if(list[i].size() > 1){
-                            if(list[i].get(0) < min){
-                                min = list[i].get(0);
-                                Min = i;
-                            }
-                        }
-                    }
-                    list[Min].remove(0);
-                    list[req[2]].add(min+req[1]);
-                    Collections.sort(list[req[2]]);
-                    answer += min - req[0];
+                    k_n[req[2]][i] += list[req[2]].get(Min) - req[0];
+                    list[req[2]].set(Min, list[req[2]].get(Min) + req[1]);
                 }
             }
-            System.out.println(req[0]);
-            System.out.println(list[1]);
-            System.out.println(list[2]);
-            System.out.println(list[3]);
-            System.out.println();
-        }
+        } 
         return answer;
     }
 }
