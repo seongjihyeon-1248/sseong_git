@@ -2,6 +2,7 @@
 package LV_3;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Schedule {
     public static void main(String args[]){
@@ -13,15 +14,12 @@ class Solution_Schedule {
     ArrayList<Integer> ans;
     int[][] k_n;
     int K;
-    int N;
     public int solution(int k, int n, int[][] reqs) {
-        int answer = 0;
         K = k;
-        N = n;
         k_n = new int[k + 1][n-k+2];
         ans = new ArrayList<>();
         ArrayList<Integer>[] list = new ArrayList[k + 1];
-        for(int i = 1; i < n-k+2; i++){
+        for(int i = 1; i < n - k + 2; i++){
             //스케줄러 초기화
             for(int ii = 1; ii < k + 1; ii++)
                 list[ii] = new ArrayList<>();
@@ -43,6 +41,17 @@ class Solution_Schedule {
                 }
             }
         } 
-        return answer;
+        combination(1, n, 0);
+ 
+        return Collections.min(ans);
+    }
+    //조합해서 배열에 저장
+    void combination(int k, int n, int wait){
+        if(k == K) ans.add(wait + k_n[k][n]);
+        else{
+            for(int i = 1; i <= n - K + k; i++){
+                combination(k + 1, n - i, wait + k_n[k][i]);
+            }
+        }
     }
 }
