@@ -11,7 +11,6 @@ public class Dice_game{
 class Solution_Dice_game {
     int dice[];
     public int solution(int a, int b, int c, int d) {
-        int answer = 0;
         dice = new int[4];
         dice[0] = a;
         dice[1] = b;
@@ -39,7 +38,7 @@ class Solution_Dice_game {
         }
         else{
             if(dice[1] == dice[3]){
-                return dice[1] * 1111; // b=c=d
+                return (10 * dice[1] + dice[0]) * (10 * dice[1] + dice[0]); // b=c=d
             }
             else{
                 if(dice[1] == dice[2]){
