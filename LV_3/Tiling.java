@@ -1,3 +1,4 @@
+//https://school.programmers.co.kr/learn/courses/30/lessons/181186
 package LV_3;
 
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ class Solution_Tiling {
     int end;
     public int solution(int n) {
         List = new ArrayList<Integer>();
-        answer = 0L;
+        answer = 0;
         N = new int[4];
         N[1] = 1;
         N[2] = 3;
