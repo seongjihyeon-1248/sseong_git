@@ -1,77 +1,33 @@
 //https://school.programmers.co.kr/learn/courses/30/lessons/181186
 package LV_3;
 
-import java.util.ArrayList;
-
 public class Tiling{
     public static void main(String args[]){
         System.out.println(new Solution_Tiling().solution(5));
     }
 }
-
 class Solution_Tiling {
-    ArrayList<Integer> List;
-    int[] N;
-    long answer;
-    int end;
-    public int solution(int n) {
-        List = new ArrayList<Integer>();
-        answer = 0;
-        N = new int[4];
-        N[1] = 1;
-        N[2] = 3;
-        N[3] = 6;
-        if(n > 3){
-            List.add(3);
-            a(new ArrayList<>(List), n - 3);
-            List.set(List.size() - 1, 2);
-            a(new ArrayList<>(List), n - 2);
-            List.set(List.size() - 1, 1);
-            a(new ArrayList<>(List), n - 1);
+    public long solution(int n){
+        long answer = 0;
+        long[] dp = new long[100001];
+        long[] cache = new long[]{8, 0, 2};
+        int MOD = 1000000007;
+        dp[0] = 1;
+        dp[1] = 1;
+        dp[2] = 3;
+        dp[3] = 10;
+        int temp = 0;
+        for(int i = 4; i <= n; i++){
+            int cur = i % 3;
+            temp = cur == 0 ? 4 : 2;
+            dp[i] = (dp[i-1] + dp[i-2] * 2 + dp[i-3] * 5 + temp + cache[cur]) % MOD;
+
+            cache[cur] += dp[i-1] * 2;
+            cache[cur] += dp[i-2] * 2;
+            cache[cur] += dp[i-3] * 4;
+            cache[cur] %= MOD;
         }
-        else if(n == 3)     return 10;
-        else if(n == 2)     return 3;
-        else if(n == 1)     return 1;
-        return (int) ((answer + 1) % 1000000007);
-    }
-    public void a(ArrayList<Integer> list, int rest){
-        if(rest == 0){
-            int ans = 1;
-            for(int l : list){
-                ans *= N[l];
-            }
-            answer = answer + ans - 1;
-        }
-        else{
-            if(rest > 3){
-                int end = list.get(list.size() - 1);
-                list.add(3);
-                a(new ArrayList<>(list), rest - 3);
-                list.set(list.size() - 1, 2);
-                a(new ArrayList<>(list), rest - 2);
-                if(end != 1) { 
-                    list.set(list.size() - 1, 1);
-                    a(new ArrayList<>(list), rest - 1);
-                }
-            }
-            else if(rest == 3){
-                int end = list.get(list.size() - 1);
-                list.add(3);
-                a(new ArrayList<>(list), 0);
-                list.set(list.size() - 1, 2);
-                list.add(1);
-                a(new ArrayList<>(list), 0);
-                if(end != 1)    a(new ArrayList<>(list), 0);
-            }
-            else if(rest == 2){
-                list.add(2);
-                a(list, 0);
-            }
-            else if(rest == 1){
-                list.add(1);
-                a(list, 0);
-            }
-        }
-        return;
+        answer = dp[n];
+        return answer;
     }
 }

@@ -18,6 +18,7 @@ class Solution_Schedule {
         K = k;
         k_n = new int[k + 1][n-k+2];
         ans = new ArrayList<>();
+        @SuppressWarnings("unchecked")
         ArrayList<Integer>[] list = new ArrayList[k + 1];
         for(int i = 1; i < n - k + 2; i++){
             //스케줄러 초기화
