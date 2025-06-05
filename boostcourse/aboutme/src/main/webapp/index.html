@@ -2,12 +2,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
 <title>메인 화면 페이지</title>
 </head>
 <body>
-	
+	<nav class="navbar">
+       <button onclick="location.href='index.html'">홈</button>
+       <button onclick="location.href='aboutme.html'">자기소개</button>
+       <button onclick="location.href='photo.html'">내사진</button>
+       <form action="today" method="get">
+   	 	<button type="submit">현재 시각</button>
+  	   </form>
+   </nav>
+   <main>
+     <section id="index_section">
+   		<h3> 웹프론트엔드 개발자~! sseong </h3>
+   		<p> 취업하고 싶어요 <br>
+   		 경기도 오산시 수청로 어딘가 살고 있어요!
+   		</p>
+   		<div>
+        <button onclick="location.href='aboutme.html'">자기소개</button>
+        <button onclick="location.href='photo.html'">내사진</button>
+        </div>
+        <img src="totoro.jpg" alt="토토로" />
+     </section>
+   </main>
+   <footer>
+       <p>sseongl6w6l@naver.com</p>
+   </footer>
 </body>
-<footer>
-    <p>sseongl6w6l@naver.com</p>
-</footer>
 </html>
