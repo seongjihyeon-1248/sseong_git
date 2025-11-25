@@ -1,7 +1,13 @@
 import "./App.css";
+import Navbar from "./Components/Navbar/Navbar";
+import { BrowserRouter } from "react-router-dom"
 
 function App() {
-  return <h1 className="text-3xl font-bold text-red-800">Hello world!</h1>;
+  return (
+    <BrowserRouter>
+      <Navbar/>
+    </BrowserRouter>
+  );
 }
 
 export default App;
