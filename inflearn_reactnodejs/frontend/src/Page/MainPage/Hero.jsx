@@ -4,7 +4,7 @@ import HeroImage from "../../assets/kiki_image1.png";
 const Hero = () => {
   return (
     <div className="relative min-h-[110vh] bg-gradient-to-b from-gray-50 to-white pb-0">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-28 lg:py-36">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-36">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="flex-1 text-center lg:text-left">
             <h1 className="text-3xl sm:text-3xl 2xl:text-4xl font-bold text-gray-900 leading-tight mb-6 lg:mb-12">
@@ -20,7 +20,7 @@ const Hero = () => {
               <button className="px-8 py-4 bg-green-800 text-white rounded-lg hover:bg-green-800 transition-colors duration-300 text-lg font-semibold shadow-lg hover:shadow-xl">
                 상담 신청하기
               </button>
-              <button className="px-8 py-4 bg-white text-green-6800 rounded-lg border-2 border-green-800 hover:bg-blue-50 transition-colors duration-300 text-lg font-semibold">
+              <button className="px-8 py-4 bg-white text-green-800 rounded-lg border-2 border-green-800 hover:bg-blue-50 transition-colors duration-300 text-lg font-semibold">
                 더 알아보기
               </button>
             </div>
