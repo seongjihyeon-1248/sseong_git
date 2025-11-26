@@ -15,7 +15,7 @@ const MenuItem = ({ path, label, onclick }) => (
   <li>
     <Link
       to={path}
-      className="hover:text-blue-600 transtion duration-300"
+      className="hover:text-green-800 transtion duration-300"
       onClick={onclick}
     >
       {label}
@@ -46,7 +46,7 @@ const Navbar = () => {
         <select
           value={language}
           onChange={(e) => setLanguage(e.target.value)}
-          classNmae="hidden lg:block px-3 ml-8 border rounded-md bg-white hover:border-blue-500 transition"
+          className="hidden lg:block px-3 ml-8 border rounded-md bg-white hover:border-blue-500 transition"
         >
           <option value="ko"> 한국어 </option>
           <option value="en"> 영어 </option>

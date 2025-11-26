@@ -10,9 +10,9 @@ const Footer = () => {
     });
   };
   return (
-    <footer className="fixed left-0 w-full bg-gray-900 text-gray-300">
+    <footer className="w-full bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 py-12">
-        <div className="text-left grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4 ">회사 소개</h3>
             <p className="text-gray-400"> 지지가 세상에서 제일 귀엽습니다.</p>
